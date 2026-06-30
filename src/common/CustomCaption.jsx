@@ -1,11 +1,44 @@
 import { Box, Typography, alpha } from "@mui/material";
 import React from "react";
 import { ACM_COLORS } from "../theme";
+import { GlassButton } from "../components/glassButton/GlassButtonDemo";
+// import "../components/glassButton/GlassButton.css";
 
 const CustomCaption = ({ text = "Regulated Global Broker" }) => {
   return (
     <Box data-aos="fade-right">
-      <Box
+      <GlassButton size="default">
+        <Box
+          sx={{
+            width: 7,
+            height: 7,
+            borderRadius: "50%",
+            background: ACM_COLORS.orange,
+            boxShadow: `0 0 10px ${ACM_COLORS.orange}`,
+            animation: "heroPulse 2s ease infinite",
+            "@keyframes heroPulse": {
+              "0%,100%": {
+                boxShadow: `0 0 0 0 ${alpha(ACM_COLORS.orange, 0.5)}`,
+              },
+              "50%": {
+                boxShadow: `0 0 0 5px ${alpha(ACM_COLORS.orange, 0)}`,
+              },
+            },
+          }}
+        />
+        <Typography
+          sx={{
+            fontSize: "0.72rem",
+            fontWeight: 700,
+            color: ACM_COLORS.orange,
+            letterSpacing: 1.8,
+            textTransform: "uppercase",
+          }}
+        >
+          {text}
+        </Typography>
+      </GlassButton>
+      {/* <Box
         sx={{
           display: "inline-flex",
           alignItems: "center",
@@ -54,7 +87,7 @@ const CustomCaption = ({ text = "Regulated Global Broker" }) => {
         >
           {text}
         </Typography>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

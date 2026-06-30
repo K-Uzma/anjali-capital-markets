@@ -1,0 +1,263 @@
+/* ── Glass Button ─────────────────────────────────────────────── */
+
+.glass-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+
+  /* Frosted glass core — light-bg friendly */
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(12px) saturate(1.6);
+  -webkit-backdrop-filter: blur(12px) saturate(1.6);
+
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.10),              /* outer rim */
+    inset 0 1px 0 rgba(255, 255, 255, 0.80),     /* top inner highlight */
+    inset 0 -1px 0 rgba(0, 0, 0, 0.06),          /* bottom inner shadow */
+    0 4px 20px rgba(0, 0, 0, 0.08);              /* ambient shadow */
+
+  color: rgba(30, 30, 30, 0.88);
+
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.18s ease,
+    color 0.25s ease;
+}
+
+/* ── Shimmer sweep pseudo-element ─────────────────────────── */
+.glass-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 80%
+  );
+  transform: translateX(-100%) skewX(-10deg);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ── Top inner glow line ──────────────────────────────────── */
+.glass-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.75) 30%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.75) 70%,
+    transparent 100%
+  );
+  border-radius: 9999px;
+  pointer-events: none;
+  transition: background 0.25s ease;
+}
+
+/* ── Hover state — light orange effect ────────────────────── */
+.glass-btn:hover {
+  background: rgba(255, 140, 50, 0.10);
+  box-shadow:
+    0 0 0 1px rgba(255, 140, 50, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -1px 0 rgba(200, 80, 0, 0.08),
+    0 6px 28px rgba(255, 120, 30, 0.14);
+  transform: translateY(-1px);
+  color: rgba(180, 70, 0, 0.90);
+}
+
+.glass-btn:hover::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 180, 100, 0.60) 30%,
+    rgba(255, 200, 130, 0.90) 50%,
+    rgba(255, 180, 100, 0.60) 70%,
+    transparent 100%
+  );
+}
+
+.glass-btn:hover::before {
+  transform: translateX(100%) skewX(-10deg);
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 200, 140, 0.50) 50%,
+    transparent 80%
+  );
+}
+
+/* ── Active / pressed ─────────────────────────────────────── */
+.glass-btn:active {
+  transform: translateY(0) scale(0.98);
+  background: rgba(255, 140, 50, 0.14);
+  color: rgba(160, 60, 0, 0.92);
+  box-shadow:
+    0 0 0 1px rgba(255, 140, 50, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.70),
+    inset 0 -1px 0 rgba(200, 80, 0, 0.10),
+    0 2px 8px rgba(255, 120, 30, 0.10);
+}
+
+/* ── Size variants ────────────────────────────────────────── */
+.glass-btn--sm {
+  height: 32px;
+  padding: 0 14px;
+  font-size: 12px;
+  gap: 5px;
+}
+
+.glass-btn--default {
+  height: 36px;
+  padding: 0 20px;
+  font-size: 14px;
+  gap: 6px;
+  background: #00000005;
+}
+
+.glass-btn--lg {
+  height: 48px;
+  padding: 0 28px;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.glass-btn--icon {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  font-size: 14px;
+}
+
+/* ── Content wrapper (keeps z-index above pseudo-elements) ── */
+.glass-btn__content {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: inherit;
+  color: inherit;
+}
+
+/* ── Branded variant (green, for use on white/light headers) ─ */
+.glass-btn--branded {
+  background: rgba(127, 156, 144, 0.12);
+  color: #3d6b5e;
+  box-shadow:
+    0 0 0 1px rgba(127, 156, 144, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -1px 0 rgba(63, 110, 95, 0.15),
+    0 4px 16px rgba(127, 156, 144, 0.15);
+}
+
+.glass-btn--branded::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.8) 30%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.8) 70%,
+    transparent 100%
+  );
+}
+
+.glass-btn--branded:hover {
+  background: rgba(127, 156, 144, 0.20);
+  color: #2e5549;
+  box-shadow:
+    0 0 0 1px rgba(127, 156, 144, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -1px 0 rgba(63, 110, 95, 0.18),
+    0 6px 24px rgba(127, 156, 144, 0.25);
+}
+
+.glass-btn--branded::before {
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 80%
+  );
+}
+
+/* ── Hero banner centered overlay ────────────────────────── */
+.hero-glass-cta {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-glass-cta .glass-btn {
+  pointer-events: all;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 36px;
+  height: 52px;
+}
+
+/* ── Demo container ───────────────────────────────────────── */
+.glass-btn-demo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  min-height: 100vh;
+  background: #0f1117;
+  padding: 40px;
+  overflow: hidden;
+}
+
+/* Dotted grid background */
+.glass-btn-demo__dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.18) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.glass-btn-demo__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
