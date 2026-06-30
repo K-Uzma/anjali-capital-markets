@@ -15,7 +15,7 @@ export const ACM_COLORS = {
   // Text
   textPrimary: '#2d233b',
   textSecondary: 'rgba(45,35,59,0.65)',
-  textMuted: 'rgba(45,35,59,0.45)',
+  textMuted: 'rgba(45,35,59,0.65)',
   // Neutrals
   white: '#ffffff',
   black: '#000000',
