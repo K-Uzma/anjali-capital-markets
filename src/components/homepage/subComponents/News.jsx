@@ -111,7 +111,7 @@ const FeaturedCard = () => (
       gap: 0,
       overflow: "hidden",
       borderRadius: 2,
-      border: `1px solid ${alpha("#fff", 0.07)}`,
+      border: `1px solid ${alpha("#000", 0.07)}`,
       "&:hover .feat-thumb": { transform: "scale(1.04)" },
     }}
   >
@@ -127,7 +127,7 @@ const FeaturedCard = () => (
         overflow: "hidden",
         display: "block",
         textDecoration: "none",
-        background: alpha(ACM_COLORS.cardBg, 0.6),
+        background: alpha("#000", 0.04),
       }}
     >
       <Box
@@ -155,7 +155,7 @@ const FeaturedCard = () => (
         flexDirection: "column",
         justifyContent: "center",
         p: { xs: 2.5, md: 3.5, lg: 4.5 },
-        background: alpha(ACM_COLORS.cardBg, 0.55),
+        background: "#f9fafb",
       }}
     >
       {/* Tag */}
@@ -185,7 +185,7 @@ const FeaturedCard = () => (
             md: "1.6rem",
             lg: "1.85rem",
           },
-          color: "#fff",
+          color: "#111827",
           lineHeight: 1.25,
           mb: 2,
           textDecoration: "none",
@@ -221,7 +221,7 @@ const FeaturedCard = () => (
           flexWrap: "wrap",
           gap: 2,
           pt: 2,
-          borderTop: `1px solid ${alpha("#fff", 0.07)}`,
+          borderTop: `1px solid ${alpha("#000", 0.07)}`,
         }}
       >
         <Typography sx={{ fontSize: "0.75rem", color: ACM_COLORS.textMuted }}>
@@ -315,7 +315,7 @@ const SmallCard = ({ item, delay = 0 }) => {
           sx={{
             fontWeight: 600,
             fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.88rem" },
-            color: alpha("#fff", 0.9),
+            color: "#111827",
             lineHeight: 1.45,
             mb: 0.75,
             display: "-webkit-box",
@@ -343,7 +343,7 @@ const News = () => (
     component="section"
     sx={{
       py: { xs: 6, md: 8 },
-      background: `linear-gradient(180deg, ${ACM_COLORS.deepPurple} 0%, ${ACM_COLORS.surfaceBg} 100%)`,
+      background: `linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)`,
       position: "relative",
       overflow: "hidden",
     }}
@@ -396,7 +396,7 @@ const News = () => (
             sx={{
               fontSize: { xs: "1.85rem", sm: "2.4rem", md: "3rem" },
               fontWeight: 700,
-              color: "#fff",
+              color: "#111827",
               lineHeight: 1.2,
               mb: 1.5,
             }}

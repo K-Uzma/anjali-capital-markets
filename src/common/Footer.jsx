@@ -97,7 +97,7 @@ const FooterLinkColumn = ({ title, links }) => (
   <Box>
     <Typography
       sx={{
-        color: "#fff",
+        color: "#111827",
         fontWeight: 600,
         mb: 2.5,
         fontSize: "0.875rem",
@@ -127,7 +127,7 @@ const FooterLinkColumn = ({ title, links }) => (
           to={link.href}
           underline="none"
           sx={{
-            color: "rgba(255,255,255,0.72)",
+            color: "rgba(0,0,0,0.65)",
             fontSize: "0.855rem",
             lineHeight: 1.5,
             transition: "color 0.2s, padding-left 0.2s",
@@ -151,7 +151,7 @@ const Footer = () => (
   <Box
     component="footer"
     sx={{
-      background: "#1a1529",
+      background: "#f8f9fa",
       position: "relative",
       overflow: "hidden",
     }}
@@ -205,11 +205,11 @@ const Footer = () => (
 
           <Typography
             sx={{
-              color: "rgba(255,255,255,0.68)",
-              fontSize: "0.855rem",
-              lineHeight: 1.85,
-              mb: 3,
-              maxWidth: 280,
+          color: "rgba(0,0,0,0.6)",
+          fontSize: "0.855rem",
+          lineHeight: 1.85,
+          mb: 3,
+          maxWidth: 280,
             }}
           >
             Empowering traders worldwide with institutional-grade access to
@@ -269,7 +269,7 @@ const Footer = () => (
         <Grid size={{ xs: 12, sm: 6, md: 2.5 }} data-aos="fade-left">
           <Typography
             sx={{
-              color: "#fff",
+              color: "#111827",
               fontWeight: 600,
               mb: 2.5,
               fontSize: "0.875rem",
@@ -293,7 +293,7 @@ const Footer = () => (
           </Typography>
 
           <Typography
-            sx={{ color: "#fff", fontWeight: 600, fontSize: "0.875rem", mb: 2 }}
+            sx={{             color: "#111827", fontWeight: 600, fontSize: "0.875rem", mb: 2 }}
           >
             Anjali Capital Markets
           </Typography>
@@ -319,7 +319,7 @@ const Footer = () => (
                     href={item.href}
                     underline="none"
                     sx={{
-                      color: "rgba(255,255,255,0.72)",
+                      color: "rgba(0,0,0,0.65)",
                       fontSize: "0.82rem",
                       lineHeight: 1.7,
                       "&:hover": { color: ACM_COLORS.orange },
@@ -331,7 +331,7 @@ const Footer = () => (
                 ) : (
                   <Typography
                     sx={{
-                      color: "rgba(255,255,255,0.72)",
+                      color: "rgba(0,0,0,0.65)",
                       fontSize: "0.82rem",
                       lineHeight: 1.7,
                     }}
@@ -347,8 +347,8 @@ const Footer = () => (
               sx={{
                 mt: 0.5,
                 p: 1.5,
-                background: alpha("#fff", 0.04),
-                border: `1px solid ${alpha("#fff", 0.07)}`,
+                background: alpha("#000", 0.03),
+                border: `1px solid ${alpha("#000", 0.07)}`,
                 borderRadius: 1.5,
               }}
             >
@@ -365,7 +365,7 @@ const Footer = () => (
                 Registration
               </Typography>
               <Typography
-                sx={{ color: "rgba(255,255,255,0.72)", fontSize: "0.8rem" }}
+                sx={{               color: "rgba(0,0,0,0.65)", fontSize: "0.8rem" }}
               >
                 221983 GBC
               </Typography>
@@ -375,7 +375,7 @@ const Footer = () => (
       </Grid>
 
       {/* Divider */}
-      <Divider sx={{ mt: 7, borderColor: alpha("#fff", 0.06) }} />
+      <Divider sx={{ mt: 7, borderColor: alpha("#000", 0.06) }} />
 
       {/* Bottom bar */}
       <Box
@@ -390,7 +390,7 @@ const Footer = () => (
         }}
       >
         <Typography
-          sx={{ color: "rgba(255,255,255,0.52)", fontSize: "0.78rem" }}
+          sx={{ color: "rgba(0,0,0,0.5)", fontSize: "0.78rem" }}
         >
           © {new Date().getFullYear()} Anjali Capital Markets Ltd. All rights
           reserved.
@@ -413,7 +413,7 @@ const Footer = () => (
               to={link.href}
               underline="none"
               sx={{
-                color: "rgba(255,255,255,0.52)",
+                color: "rgba(0,0,0,0.5)",
                 fontSize: "0.775rem",
                 "&:hover": { color: ACM_COLORS.orange },
                 transition: "color 0.2s",
@@ -428,14 +428,14 @@ const Footer = () => (
       {/* Risk Disclaimer */}
       <Box
         sx={{
-          borderTop: `1px solid ${alpha("#fff", 0.05)}`,
+          borderTop: `1px solid ${alpha("#000", 0.05)}`,
           py: 3,
           px: { xs: 0, md: 0 },
         }}
       >
         <Typography
           sx={{
-            color: "rgba(255,255,255,0.45)",
+            color: "rgba(0,0,0,0.45)",
             fontSize: "0.71rem",
             lineHeight: 1.9,
             maxWidth: "100%",
@@ -443,7 +443,7 @@ const Footer = () => (
         >
           <Box
             component="span"
-            sx={{ color: "rgba(255,255,255,0.65)", fontWeight: 600 }}
+            sx={{ color: "rgba(0,0,0,0.65)", fontWeight: 600 }}
           >
             Risk Warning:{" "}
           </Box>

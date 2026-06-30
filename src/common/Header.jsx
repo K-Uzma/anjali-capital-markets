@@ -89,7 +89,7 @@ const DesktopNavItem = ({ item, activePath }) => {
     : activePath === item.href;
 
   const navBtnSx = {
-    color: isActive ? ACM_COLORS.orange : "rgba(255,255,255,0.82)",
+    color: isActive ? ACM_COLORS.orange : "rgba(0,0,0,0.8)",
     fontWeight: isActive ? 600 : 400,
     fontSize: "0.875rem",
     px: 1.5,
@@ -151,10 +151,10 @@ const DesktopNavItem = ({ item, activePath }) => {
             sx: {
               mt: 1,
               minWidth: 210,
-              background: "#1e1829",
-              border: `1px solid ${alpha("#fff", 0.08)}`,
+              background: "#ffffff",
+              border: `1px solid ${alpha("#000", 0.08)}`,
               borderRadius: 2,
-              boxShadow: `0 20px 60px rgba(0,0,0,0.5)`,
+              boxShadow: `0 20px 60px rgba(0,0,0,0.15)`,
               overflow: "visible",
               "&::before": {
                 content: '""',
@@ -163,8 +163,8 @@ const DesktopNavItem = ({ item, activePath }) => {
                 left: 22,
                 width: 10,
                 height: 10,
-                background: "#1e1829",
-                border: `1px solid ${alpha("#fff", 0.08)}`,
+                background: "#ffffff",
+                border: `1px solid ${alpha("#000", 0.08)}`,
                 borderRight: "none",
                 borderBottom: "none",
                 transform: "rotate(45deg)",
@@ -185,7 +185,7 @@ const DesktopNavItem = ({ item, activePath }) => {
               color:
                 activePath === child.href
                   ? ACM_COLORS.orange
-                  : "rgba(255,255,255,0.75)",
+                  : "rgba(0,0,0,0.7)",
               fontSize: "0.875rem",
               py: 1.25,
               px: 2,
@@ -195,7 +195,7 @@ const DesktopNavItem = ({ item, activePath }) => {
                   : "2px solid transparent",
               transition: "all 0.15s",
               "&:hover": {
-                color: "#fff",
+                color: "#000",
                 background: alpha(ACM_COLORS.orange, 0.07),
                 borderLeftColor: ACM_COLORS.orange,
               },
@@ -223,8 +223,8 @@ const Header = () => {
       {riskVisible && (
         <Box
           sx={{
-            background: "#100d1a",
-            borderBottom: `1px solid ${alpha("#fff", 0.05)}`,
+            background: "#f8f9fa",
+            borderBottom: `1px solid ${alpha("#000", 0.05)}`,
             py: 0.6,
             px: { xs: 2, md: 4 },
             display: "flex",
@@ -237,11 +237,11 @@ const Header = () => {
         >
           <Typography
             sx={{
-              color: alpha("#fff", 0.5),
-              fontSize: "0.71rem",
-              textAlign: "center",
-              flex: 1,
-              lineHeight: 1.4,
+            color: alpha("#000", 0.55),
+            fontSize: "0.71rem",
+            textAlign: "center",
+            flex: 1,
+            lineHeight: 1.4,
             }}
           >
             <Box
@@ -257,9 +257,9 @@ const Header = () => {
             size="small"
             onClick={() => setRiskVisible(false)}
             sx={{
-              color: alpha("#fff", 0.35),
+              color: alpha("#000", 0.35),
               p: 0.25,
-              "&:hover": { color: "#fff", background: "none" },
+              "&:hover": { color: "#000", background: "none" },
             }}
           >
             <CloseIcon sx={{ fontSize: "0.9rem" }} />
@@ -273,10 +273,10 @@ const Header = () => {
         elevation={0}
         sx={{
           background: scrolled
-            ? alpha(ACM_COLORS.deepPurple, 0.92)
-            : ACM_COLORS.deepPurple,
+            ? alpha("#ffffff", 0.95)
+            : "#ffffff",
           backdropFilter: scrolled ? "blur(24px)" : "none",
-          borderBottom: `1px solid ${alpha("#fff", scrolled ? 0.06 : 0.07)}`,
+          borderBottom: `1px solid ${alpha("#000", scrolled ? 0.06 : 0.07)}`,
           transition: "background 0.3s, backdrop-filter 0.3s",
           zIndex: 1200,
         }}
@@ -371,11 +371,11 @@ const Header = () => {
               onClick={() => setDrawerOpen(true)}
               sx={{
                 display: { xs: "flex", md: "none" },
-                color: "#fff",
+                color: "#000",
                 ml: "auto",
-                background: alpha("#fff", 0.06),
+                background: alpha("#000", 0.05),
                 borderRadius: 1.5,
-                "&:hover": { background: alpha("#fff", 0.1) },
+                "&:hover": { background: alpha("#000", 0.08) },
               }}
             >
               <MenuIcon fontSize="small" />
@@ -396,9 +396,9 @@ const Header = () => {
           paper: {
             sx: {
               width: 300,
-              background: "#1a1429",
-              color: "#fff",
-              borderLeft: `1px solid ${alpha("#fff", 0.07)}`,
+              background: "#ffffff",
+              color: "#000",
+              borderLeft: `1px solid ${alpha("#000", 0.07)}`,
             },
           },
         }}
@@ -411,15 +411,15 @@ const Header = () => {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            borderBottom: `1px solid ${alpha("#fff", 0.07)}`,
+            borderBottom: `1px solid ${alpha("#000", 0.07)}`,
           }}
         >
           <Logo height={26} />
           <IconButton
             onClick={() => setDrawerOpen(false)}
             sx={{
-              color: alpha("#fff", 0.6),
-              "&:hover": { color: "#fff", background: "none" },
+              color: alpha("#000", 0.6),
+              "&:hover": { color: "#000", background: "none" },
             }}
           >
             <CloseIcon fontSize="small" />
@@ -464,7 +464,7 @@ const Header = () => {
                   >
                     <List
                       disablePadding
-                      sx={{ background: alpha("#000", 0.15) }}
+                      sx={{ background: alpha("#000", 0.03) }}
                     >
                       {item.children.map((child) => (
                         <ListItemButton
@@ -493,7 +493,7 @@ const Header = () => {
                                 color:
                                   location.pathname === child.href
                                     ? ACM_COLORS.orange
-                                    : alpha("#fff", 0.6),
+                                    : alpha("#000", 0.6),
                               },
                             }}
                           />
@@ -526,13 +526,13 @@ const Header = () => {
                         color:
                           location.pathname === item.href
                             ? ACM_COLORS.orange
-                            : "#fff",
+                            : "#000",
                       },
                     }}
                   />
                 </ListItemButton>
               )}
-              <Divider sx={{ borderColor: alpha("#fff", 0.05) }} />
+              <Divider sx={{ borderColor: alpha("#000", 0.05) }} />
             </React.Fragment>
           ))}
         </List>
@@ -544,7 +544,7 @@ const Header = () => {
             display: "flex",
             flexDirection: "column",
             gap: 1.25,
-            borderTop: `1px solid ${alpha("#fff", 0.07)}`,
+            borderTop: `1px solid ${alpha("#000", 0.07)}`,
           }}
         >
           <Button

@@ -256,11 +256,11 @@ const fmt$ = (n) =>
 
 /* ─── Styled Select ─────────────────────────────────────────── */
 const selectSx = {
-  background: alpha(ACM_COLORS.surfaceBg, 0.7),
-  color: "#fff",
+  background: alpha("#f9fafb", 0.9),
+  color: "#111827",
   borderRadius: 2,
   fontSize: "0.875rem",
-  "& .MuiOutlinedInput-notchedOutline": { borderColor: alpha("#fff", 0.1) },
+  "& .MuiOutlinedInput-notchedOutline": { borderColor: alpha("#000", 0.12) },
   "&:hover .MuiOutlinedInput-notchedOutline": {
     borderColor: alpha(ACM_COLORS.orange, 0.4),
   },
@@ -268,24 +268,24 @@ const selectSx = {
     borderColor: ACM_COLORS.orange,
     borderWidth: 1,
   },
-  "& .MuiSvgIcon-root": { color: ACM_COLORS.textMuted },
+  "& .MuiSvgIcon-root": { color: "rgba(0,0,0,0.5)" },
 };
 
 const menuPropsSx = {
   PaperProps: {
     sx: {
-      background: "#1a1429",
-      border: `1px solid ${alpha("#fff", 0.08)}`,
+      background: "#ffffff",
+      border: `1px solid ${alpha("#000", 0.08)}`,
       borderRadius: 2,
-      boxShadow: "0 20px 60px rgba(0,0,0,0.55)",
+      boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
       mt: 0.5,
       "& .MuiMenuItem-root": {
         fontSize: "0.875rem",
-        color: ACM_COLORS.textSecondary,
+        color: "rgba(0,0,0,0.7)",
         py: 1.2,
         "&:hover": {
           background: alpha(ACM_COLORS.orange, 0.08),
-          color: "#fff",
+          color: "#000",
         },
         "&.Mui-selected": {
           background: alpha(ACM_COLORS.orange, 0.12),
@@ -355,7 +355,7 @@ const TradingCalculator = () => {
       component="section"
       sx={{
         py: { xs: 6, md: 8 },
-        background: `linear-gradient(180deg, ${ACM_COLORS.deepPurple} 0%, ${ACM_COLORS.darkBg} 100%)`,
+        background: `linear-gradient(180deg, #ffffff 0%, #f0f2f5 100%)`,
         position: "relative",
         overflow: "hidden",
       }}
@@ -414,7 +414,7 @@ const TradingCalculator = () => {
             sx={{
               fontSize: { xs: "1.85rem", sm: "2.4rem", md: "3rem" },
               fontWeight: 700,
-              color: "#fff",
+              color: "#111827",
               lineHeight: 1.2,
               mb: 1.5,
             }}
@@ -469,8 +469,8 @@ const TradingCalculator = () => {
             data-aos-delay="100"
             sx={{
               borderRadius: 3,
-              border: `1px solid ${alpha("#fff", 0.07)}`,
-              background: `linear-gradient(145deg, ${alpha(ACM_COLORS.cardBg, 0.9)}, ${alpha(ACM_COLORS.surfaceBg, 0.9)})`,
+              border: `1px solid ${alpha("#000", 0.07)}`,
+              background: `#ffffff`,
               overflow: "hidden",
             }}
           >
@@ -479,8 +479,8 @@ const TradingCalculator = () => {
               sx={{
                 px: 3,
                 py: 2.5,
-                borderBottom: `1px solid ${alpha("#fff", 0.06)}`,
-                background: alpha("#000", 0.1),
+                borderBottom: `1px solid ${alpha("#000", 0.06)}`,
+                background: alpha("#000", 0.02),
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
@@ -488,7 +488,7 @@ const TradingCalculator = () => {
             >
               <Box>
                 <Typography
-                  sx={{ fontSize: "1rem", fontWeight: 700, color: "#fff" }}
+                  sx={{ fontSize: "1rem", fontWeight: 700, color: "#111827" }}
                 >
                   Choose your points of movement
                 </Typography>
@@ -638,10 +638,10 @@ const TradingCalculator = () => {
                     sx={{
                       display: "flex",
                       alignItems: "center",
-                      border: `1px solid ${alpha("#fff", 0.1)}`,
+                      border: `1px solid ${alpha("#000", 0.12)}`,
                       borderRadius: 2,
                       overflow: "hidden",
-                      background: alpha(ACM_COLORS.surfaceBg, 0.7),
+                      background: alpha("#f9fafb", 0.9),
                       "&:focus-within": {
                         borderColor: alpha(ACM_COLORS.orange, 0.45),
                       },
@@ -657,7 +657,7 @@ const TradingCalculator = () => {
                         justifyContent: "center",
                         cursor: "pointer",
                         color: ACM_COLORS.textMuted,
-                        borderRight: `1px solid ${alpha("#fff", 0.07)}`,
+                        borderRight: `1px solid ${alpha("#000", 0.07)}`,
                         "&:hover": {
                           background: alpha(ACM_COLORS.orange, 0.1),
                           color: ACM_COLORS.orange,
@@ -682,7 +682,7 @@ const TradingCalculator = () => {
                         background: "transparent",
                         border: "none",
                         outline: "none",
-                        color: "#fff",
+                        color: "#111827",
                         fontSize: "0.95rem",
                         fontWeight: 600,
                         fontFamily: "monospace",
@@ -701,7 +701,7 @@ const TradingCalculator = () => {
                         justifyContent: "center",
                         cursor: "pointer",
                         color: ACM_COLORS.textMuted,
-                        borderLeft: `1px solid ${alpha("#fff", 0.07)}`,
+                        borderLeft: `1px solid ${alpha("#000", 0.07)}`,
                         "&:hover": {
                           background: alpha(ACM_COLORS.orange, 0.1),
                           color: ACM_COLORS.orange,
@@ -733,7 +733,7 @@ const TradingCalculator = () => {
                     sx={{
                       display: "grid",
                       gridTemplateColumns: "1fr 1fr",
-                      border: `1px solid ${alpha("#fff", 0.1)}`,
+                      border: `1px solid ${alpha("#000", 0.12)}`,
                       borderRadius: 2,
                       overflow: "hidden",
                       height: 48,
@@ -767,12 +767,12 @@ const TradingCalculator = () => {
                                 : "#ef5350"
                               : ACM_COLORS.textMuted,
                             borderRight: isBuy
-                              ? `1px solid ${alpha("#fff", 0.07)}`
+                              ? `1px solid ${alpha("#000", 0.07)}`
                               : "none",
                             "&:hover": {
                               background: active
                                 ? undefined
-                                : alpha("#fff", 0.04),
+                                : alpha("#000", 0.04),
                             },
                           }}
                         >
@@ -793,8 +793,8 @@ const TradingCalculator = () => {
                     gap: 2,
                     p: 1.5,
                     borderRadius: 2,
-                    background: alpha("#000", 0.15),
-                    border: `1px solid ${alpha("#fff", 0.05)}`,
+                    background: alpha("#000", 0.03),
+                    border: `1px solid ${alpha("#000", 0.06)}`,
                   }}
                 >
                   <Box>
@@ -812,7 +812,7 @@ const TradingCalculator = () => {
                       sx={{
                         fontSize: "0.9rem",
                         fontWeight: 700,
-                        color: "#fff",
+                        color: "#111827",
                         fontFamily: "monospace",
                       }}
                     >
@@ -829,7 +829,7 @@ const TradingCalculator = () => {
                     sx={{
                       width: 1,
                       height: 28,
-                      background: alpha("#fff", 0.08),
+                      background: alpha("#000", 0.03),
                     }}
                   />
                   <Box>
@@ -858,7 +858,7 @@ const TradingCalculator = () => {
                     sx={{
                       width: 1,
                       height: 28,
-                      background: alpha("#fff", 0.08),
+                      background: alpha("#000", 0.03),
                     }}
                   />
                   <Box>
@@ -895,7 +895,7 @@ const TradingCalculator = () => {
                 startIcon={<Calculate />}
                 endIcon={<ArrowForward />}
                 sx={{
-                  background: cfg ? ACM_COLORS.orange : alpha("#fff", 0.08),
+                  background: cfg ? ACM_COLORS.orange : alpha("#000", 0.08),
                   color: cfg ? "#fff" : ACM_COLORS.textMuted,
                   borderRadius: 2,
                   py: 1.6,
@@ -912,8 +912,8 @@ const TradingCalculator = () => {
                       : "none",
                   },
                   "&.Mui-disabled": {
-                    background: alpha("#fff", 0.06),
-                    color: alpha("#fff", 0.25),
+                    background: alpha("#000", 0.06),
+                    color: alpha("#000", 0.25),
                   },
                   transition: "all 0.25s",
                 }}
@@ -945,7 +945,7 @@ const TradingCalculator = () => {
                       borderRadius: 3,
                       height: 490,
                       // border: `1px dashed ${alpha("#fff", 0.1)}`,
-                      background: alpha("#000", 0.08),
+                      background: alpha("#000", 0.03),
                     }}
                   >
                     <Box
@@ -972,7 +972,7 @@ const TradingCalculator = () => {
                       sx={{
                         fontSize: "1rem",
                         fontWeight: 600,
-                        color: alpha("#fff", 0.35),
+                        color: alpha("#000", 0.35),
                         mb: 0.75,
                       }}
                     >
@@ -1033,7 +1033,7 @@ const TradingCalculator = () => {
                       sx={{
                         fontSize: "0.8rem",
                         fontWeight: 600,
-                        color: alpha("#fff", 0.55),
+                        color: alpha("#000", 0.55),
                         textTransform: "uppercase",
                         letterSpacing: 1,
                       }}
@@ -1068,7 +1068,7 @@ const TradingCalculator = () => {
                             p: { xs: 2, md: 2.5 },
                             borderRadius: 2.5,
                             border: `1px solid ${alpha(accent, 0.2)}`,
-                            background: `linear-gradient(135deg, ${alpha(accent, 0.06)}, ${alpha(ACM_COLORS.surfaceBg, 0.5)})`,
+                            background: `linear-gradient(135deg, ${alpha(accent, 0.04)}, #f9fafb)`,
                             position: "relative",
                             overflow: "hidden",
                             "&::before": {
@@ -1122,7 +1122,7 @@ const TradingCalculator = () => {
                             sx={{
                               fontSize: "1.2rem",
                               fontWeight: 800,
-                              color: "#fff",
+                              color: "#111827",
                               fontFamily: "monospace",
                               lineHeight: 1,
                             }}
@@ -1144,7 +1144,7 @@ const TradingCalculator = () => {
                       p: { xs: 2, md: 2.5 },
                       borderRadius: 2.5,
                       border: `1px solid ${alpha("#ef5350", 0.2)}`,
-                      background: `linear-gradient(135deg, ${alpha("#ef5350", 0.06)}, ${alpha(ACM_COLORS.surfaceBg, 0.5)})`,
+                      background: `linear-gradient(135deg, ${alpha("#ef5350", 0.04)}, #f9fafb)`,
                       position: "relative",
                       overflow: "hidden",
                       "&::before": {

@@ -628,7 +628,7 @@ const RangeBar = ({ price, w52l, w52h, up, cat }) => {
           flex: 1,
           height: 4,
           borderRadius: 2,
-          background: alpha("#fff", 0.08),
+          background: alpha("#000", 0.08),
           position: "relative",
           minWidth: 60,
           display: { xs: "none", md: "block" },
@@ -758,7 +758,7 @@ const MarketPrices = () => {
       component="section"
       sx={{
         py: { xs: 6, md: 8 },
-        background: `linear-gradient(180deg, ${ACM_COLORS.darkBg} 0%, ${ACM_COLORS.deepPurple} 100%)`,
+        background: `linear-gradient(180deg, #f0f2f5 0%, #ffffff 100%)`,
         position: "relative",
         overflow: "hidden",
       }}
@@ -847,7 +847,7 @@ const MarketPrices = () => {
                 sx={{
                   fontSize: { xs: "1.85rem", sm: "2.4rem", md: "3rem" },
                   fontWeight: 700,
-                  color: "#fff",
+                  color: "#111827",
                   lineHeight: 1.2,
                 }}
               >
@@ -912,10 +912,10 @@ const MarketPrices = () => {
           data-aos-delay="100"
           sx={{
             borderRadius: 3,
-            border: `1px solid ${alpha("#fff", 0.08)}`,
-            background: `linear-gradient(145deg, ${alpha(ACM_COLORS.cardBg, 0.9)}, ${alpha(ACM_COLORS.surfaceBg, 0.9)})`,
+            border: `1px solid ${alpha("#000", 0.08)}`,
+            background: `#ffffff`,
             overflow: "hidden",
-            boxShadow: `0 24px 64px rgba(0,0,0,0.4)`,
+            boxShadow: `0 4px 24px rgba(0,0,0,0.08)`,
           }}
         >
           {/* ── Tabs ── */}
@@ -924,12 +924,12 @@ const MarketPrices = () => {
               display: "flex",
               alignItems: "center",
               gap: 0,
-              borderBottom: `1px solid ${alpha("#fff", 0.07)}`,
+              borderBottom: `1px solid ${alpha("#000", 0.07)}`,
               px: { xs: 1, md: 2 },
               overflowX: "auto",
               scrollbarWidth: "none",
               "&::-webkit-scrollbar": { display: "none" },
-              background: alpha("#000", 0.12),
+              background: alpha("#000", 0.02),
             }}
           >
             {TABS.map((tab) => {
@@ -979,8 +979,8 @@ const MarketPrices = () => {
               alignItems: "center",
               px: { xs: 2, md: 3 },
               py: 1.25,
-              borderBottom: `1px solid ${alpha("#fff", 0.06)}`,
-              background: alpha("#000", 0.08),
+              borderBottom: `1px solid ${alpha("#000", 0.06)}`,
+              background: alpha("#000", 0.02),
             }}
           >
             {COLS.map((col) => (
@@ -1016,7 +1016,7 @@ const MarketPrices = () => {
                     py: { xs: 1.6, md: 2 },
                     borderBottom:
                       idx < rows.length - 1
-                        ? `1px solid ${alpha("#fff", 0.045)}`
+                        ? `1px solid ${alpha("#000", 0.045)}`
                         : "none",
                     background: flashing
                       ? alpha(row.up ? "#4caf50" : "#f44336", 0.07)
@@ -1034,7 +1034,7 @@ const MarketPrices = () => {
                       sx={{
                         fontWeight: 600,
                         fontSize: { xs: "0.85rem", md: "0.9rem" },
-                        color: "#fff",
+                        color: "#111827",
                         transition: "color 0.2s",
                         whiteSpace: "nowrap",
                         overflow: "hidden",
@@ -1110,7 +1110,7 @@ const MarketPrices = () => {
                           ? row.up
                             ? "#66bb6a"
                             : "#ef5350"
-                          : "#fff",
+                          : "#111827",
                         fontFamily: "monospace",
                         transition: "color 0.3s",
                       }}
@@ -1186,8 +1186,8 @@ const MarketPrices = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              borderTop: `1px solid ${alpha("#fff", 0.06)}`,
-              background: alpha("#000", 0.1),
+              borderTop: `1px solid ${alpha("#000", 0.06)}`,
+              background: alpha("#000", 0.02),
             }}
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: 0.75 }}>

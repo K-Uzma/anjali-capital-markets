@@ -49,7 +49,7 @@ const GetStarted = () => (
     component="section"
     sx={{
       py: { xs: 6, md: 8 },
-      background: `linear-gradient(180deg, ${ACM_COLORS.deepPurple} 0%, ${ACM_COLORS.darkBg} 100%)`,
+      background: `linear-gradient(180deg, #ffffff 0%, #f0f2f5 100%)`,
       position: "relative",
       overflow: "hidden",
     }}
@@ -102,7 +102,7 @@ const GetStarted = () => (
           sx={{
             fontSize: { xs: "1.85rem", sm: "2.4rem", md: "3rem" },
             fontWeight: 700,
-            color: "#fff",
+            color: "#111827",
             lineHeight: 1.2,
             mb: 1.5,
           }}
@@ -164,8 +164,8 @@ const GetStarted = () => (
                 position: "relative",
                 zIndex: 1,
                 borderRadius: 3,
-                border: `1px solid ${alpha("#fff", 0.07)}`,
-                background: `linear-gradient(145deg, ${alpha(ACM_COLORS.cardBg, 0.85)}, ${alpha(ACM_COLORS.surfaceBg, 0.85)})`,
+                border: `1px solid ${alpha("#000", 0.07)}`,
+                background: `#ffffff`,
                 p: { xs: 3, md: 3.5 },
                 overflow: "hidden",
                 transition:
@@ -196,7 +196,7 @@ const GetStarted = () => (
                   right: 16,
                   fontSize: "7rem",
                   fontWeight: 900,
-                  color: alpha("#fff", 0.025),
+                  color: alpha("#000", 0.03),
                   lineHeight: 1,
                   userSelect: "none",
                   pointerEvents: "none",
@@ -246,7 +246,7 @@ const GetStarted = () => (
                 sx={{
                   fontSize: "1.1rem",
                   fontWeight: 700,
-                  color: "#fff",
+                  color: "#111827",
                   mb: 1,
                 }}
               >

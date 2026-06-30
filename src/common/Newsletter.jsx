@@ -41,9 +41,9 @@ const Newsletter = () => {
         position: "relative",
         overflow: "hidden",
         py: { xs: 10, md: 14 },
-        background: `linear-gradient(135deg, #1a1229 0%, ${ACM_COLORS.deepPurple} 50%, #221a35 100%)`,
-        borderTop: `1px solid ${alpha("#fff", 0.07)}`,
-        borderBottom: `1px solid ${alpha("#fff", 0.07)}`,
+        background: `linear-gradient(135deg, #f0f2f5 0%, #ffffff 50%, #f8f9fa 100%)`,
+        borderTop: `1px solid ${alpha("#000", 0.06)}`,
+        borderBottom: `1px solid ${alpha("#000", 0.06)}`,
       }}
     >
       {/* Top accent bar */}
@@ -158,7 +158,7 @@ const Newsletter = () => {
             data-aos="fade-right"
             variant="h3"
             sx={{
-              color: "#fff",
+              color: "#111827",
               fontWeight: 700,
               mb: 2,
               fontSize: { xs: "2rem", sm: "2.6rem", md: "3.2rem" },
@@ -190,11 +190,11 @@ const Newsletter = () => {
           <Typography
             data-aos="fade-left"
             sx={{
-              color: alpha("#fff", 0.55),
-              maxWidth: 460,
-              mx: "auto",
-              fontSize: { xs: "0.95rem", md: "1rem" },
-              lineHeight: 1.75,
+            color: "rgba(0,0,0,0.55)",
+            maxWidth: 460,
+            mx: "auto",
+            fontSize: { xs: "0.95rem", md: "1rem" },
+            lineHeight: 1.75,
             }}
           >
             Join thousands of traders and get weekly insights, market news, and
@@ -211,8 +211,8 @@ const Newsletter = () => {
             maxWidth: 580,
             mx: "auto",
             display: "flex",
-            background: alpha("#fff", 0.05),
-            border: `1.5px solid ${focused ? ACM_COLORS.orange : alpha("#fff", 0.1)}`,
+            background: "#f9fafb",
+            border: `1.5px solid ${focused ? ACM_COLORS.orange : alpha("#000", 0.15)}`,
             borderRadius: "100px",
             transition: "border-color 0.25s, box-shadow 0.25s",
             boxShadow: focused
@@ -233,17 +233,17 @@ const Newsletter = () => {
             startAdornment={
               <InputAdornment position="start">
                 <EmailIcon
-                  sx={{ color: alpha("#fff", 0.3), fontSize: "1rem", ml: 1 }}
+                  sx={{ color: alpha("#000", 0.3), fontSize: "1rem", ml: 1 }}
                 />
               </InputAdornment>
             }
             sx={{
               "& .MuiOutlinedInput-notchedOutline": { border: "none" },
               "& .MuiInputBase-input": {
-                color: "#fff",
+                color: "#111827",
                 py: 1.5,
                 fontSize: "0.9rem",
-                "&::placeholder": { color: alpha("#fff", 0.3), opacity: 1 },
+                "&::placeholder": { color: alpha("#000", 0.3), opacity: 1 },
               },
             }}
           />

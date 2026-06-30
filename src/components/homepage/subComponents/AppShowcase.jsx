@@ -36,7 +36,7 @@ const AppShowcase = () => (
     component="section"
     sx={{
       py: { xs: 6, md: 8 },
-      background: `linear-gradient(180deg, ${ACM_COLORS.deepPurple} 0%, ${ACM_COLORS.darkBg} 100%)`,
+      background: `linear-gradient(180deg, #ffffff 0%, #f0f2f5 100%)`,
       position: "relative",
       overflow: "hidden",
     }}
@@ -125,12 +125,12 @@ const AppShowcase = () => (
               position: "absolute",
               top: { xs: "6%", lg: "10%" },
               left: { xs: "4%", lg: "-2%" },
-              background: `linear-gradient(135deg, ${alpha(ACM_COLORS.cardBg, 0.95)}, ${alpha(ACM_COLORS.surfaceBg, 0.95)})`,
+              background: "#ffffff",
               border: `1px solid ${alpha(ACM_COLORS.orange, 0.2)}`,
               borderRadius: 2.5,
               px: 1.75,
               py: 1.25,
-              boxShadow: `0 12px 32px rgba(0,0,0,0.4), 0 0 0 1px ${alpha(ACM_COLORS.orange, 0.08)}`,
+              boxShadow: `0 12px 32px rgba(0,0,0,0.1), 0 0 0 1px ${alpha(ACM_COLORS.orange, 0.08)}`,
               backdropFilter: "blur(12px)",
               zIndex: 2,
               display: "flex",
@@ -140,7 +140,7 @@ const AppShowcase = () => (
           >
             <CheckCircle sx={{ fontSize: "1rem", color: ACM_COLORS.orange }} />
             <Typography
-              sx={{ fontSize: "0.75rem", fontWeight: 600, color: "#fff" }}
+              sx={{ fontSize: "0.75rem", fontWeight: 600, color: "#111827" }}
             >
               Regulated & Secure
             </Typography>
@@ -199,7 +199,7 @@ const AppShowcase = () => (
                   lg: "3.2rem",
                 },
                 fontWeight: 700,
-                color: "#fff",
+                color: "#111827",
                 lineHeight: 1.15,
                 mb: 2,
               }}
@@ -257,12 +257,12 @@ const AppShowcase = () => (
                   gap: 2,
                   p: 2,
                   borderRadius: 2.5,
-                  border: `1px solid ${alpha("#fff", 0.05)}`,
-                  background: alpha(ACM_COLORS.cardBg, 0.4),
+                  border: `1px solid ${alpha("#000", 0.06)}`,
+                  background: alpha("#f8f9fa", 0.8),
                   transition: "border-color 0.25s, background 0.25s",
                   "&:hover": {
                     borderColor: alpha(accent, 0.3),
-                    background: alpha(ACM_COLORS.cardBg, 0.65),
+                    background: alpha("#f0f2f5", 1),
                   },
                 }}
               >
@@ -286,7 +286,7 @@ const AppShowcase = () => (
                     sx={{
                       fontSize: "0.95rem",
                       fontWeight: 700,
-                      color: "#fff",
+                      color: "#111827",
                       mb: 0.4,
                     }}
                   >
@@ -340,17 +340,17 @@ const AppShowcase = () => (
               component={Link}
               to="#"
               sx={{
-                borderColor: alpha("#fff", 0.18),
-                color: ACM_COLORS.textSecondary,
+                borderColor: alpha("#000", 0.18),
+                color: alpha("#000", 0.7),
                 borderRadius: "100px",
                 px: 3.5,
                 py: 1.4,
                 fontSize: "0.875rem",
                 fontWeight: 600,
                 "&:hover": {
-                  borderColor: alpha("#fff", 0.4),
-                  color: "#fff",
-                  background: alpha("#fff", 0.04),
+                  borderColor: alpha("#000", 0.4),
+                  color: "#000",
+                  background: alpha("#000", 0.04),
                 },
                 transition: "all 0.2s",
               }}

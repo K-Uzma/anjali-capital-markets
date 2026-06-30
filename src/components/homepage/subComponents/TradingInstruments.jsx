@@ -151,8 +151,8 @@ const InstrumentCard = ({ inst, flash }) => {
         flexDirection: "column",
         borderRadius: 3,
         overflow: "hidden",
-        border: `1px solid ${alpha("#fff", 0.07)}`,
-        background: `linear-gradient(160deg, ${alpha(ACM_COLORS.cardBg, 0.92)} 0%, ${alpha(ACM_COLORS.surfaceBg, 0.92)} 100%)`,
+        border: `1px solid ${alpha("#000", 0.07)}`,
+        background: `#ffffff`,
         textDecoration: "none",
         position: "relative",
         transition: "transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease",
@@ -203,7 +203,7 @@ const InstrumentCard = ({ inst, flash }) => {
           <Typography sx={{ fontSize: "0.72rem", fontWeight: 600, color: accent, textTransform: "uppercase", letterSpacing: 0.8, mb: 0.25 }}>
             {inst.category}
           </Typography>
-          <Typography sx={{ fontSize: "0.85rem", fontWeight: 700, color: alpha("#fff", 0.55), fontFamily: "monospace", letterSpacing: 0.5 }}>
+          <Typography sx={{ fontSize: "0.85rem", fontWeight: 700, color: alpha("#000", 0.55), fontFamily: "monospace", letterSpacing: 0.5 }}>
             {inst.ticker}
           </Typography>
         </Box>
@@ -238,7 +238,7 @@ const InstrumentCard = ({ inst, flash }) => {
           sx={{
             fontSize: "1.55rem",
             fontWeight: 800,
-            color: flash ? color : "#fff",
+            color: flash ? color : "#111827",
             fontFamily: "monospace",
             lineHeight: 1,
             transition: "color 0.35s",
@@ -286,7 +286,7 @@ const InstrumentCard = ({ inst, flash }) => {
         sx={{
           px: "22px",
           py: 1.75,
-          borderTop: `1px solid ${alpha("#fff", 0.05)}`,
+          borderTop: `1px solid ${alpha("#000", 0.05)}`,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -294,13 +294,13 @@ const InstrumentCard = ({ inst, flash }) => {
       >
         <Typography
           className="card-learn"
-          sx={{ fontSize: "0.78rem", fontWeight: 600, color: ACM_COLORS.textMuted, transition: "color 0.22s" }}
+          sx={{ fontSize: "0.78rem", fontWeight: 600, color: "rgba(0,0,0,0.5)", transition: "color 0.22s" }}
         >
           Learn more
         </Typography>
         <ArrowForward
           className="card-arrow"
-          sx={{ fontSize: "0.9rem", color: ACM_COLORS.textMuted, transition: "transform 0.22s, color 0.22s" }}
+          sx={{ fontSize: "0.9rem", color: "rgba(0,0,0,0.5)", transition: "transform 0.22s, color 0.22s" }}
         />
       </Box>
     </Box>
@@ -338,11 +338,11 @@ const TradingInstruments = () => {
       component="section"
       sx={{
         py: { xs: 6, md: 8 },
-        background: `linear-gradient(180deg, ${ACM_COLORS.darkBg} 0%, ${ACM_COLORS.deepPurple} 100%)`,
+        background: `linear-gradient(180deg, #f0f2f5 0%, #ffffff 100%)`,
         position: "relative",
         overflow: "hidden",
         "& .swiper-pagination-bullet": {
-          background: alpha("#fff", 0.2),
+          background: alpha("#000", 0.2),
           opacity: 1,
           width: 7,
           height: 7,
@@ -381,7 +381,7 @@ const TradingInstruments = () => {
                 200+ Instruments
               </Typography>
             </Box>
-            <Typography variant="h2" sx={{ fontSize: { xs: "1.85rem", sm: "2.4rem", md: "3rem" }, fontWeight: 700, color: "#fff", lineHeight: 1.2 }}>
+            <Typography variant="h2" sx={{ fontSize: { xs: "1.85rem", sm: "2.4rem", md: "3rem" }, fontWeight: 700, color: "#111827", lineHeight: 1.2 }}>
               Explore Our Variety of{" "}
               <Box component="span" sx={{ color: ACM_COLORS.orange, position: "relative", "&::after": { content: '""', position: "absolute", bottom: -4, left: 0, width: "100%", height: 3, borderRadius: 2, background: `linear-gradient(90deg, ${ACM_COLORS.orange}, transparent)` } }}>
                 Trading Instruments
@@ -400,8 +400,8 @@ const TradingInstruments = () => {
                 className={cls}
                 sx={{
                   width: 42, height: 42, borderRadius: "12px",
-                  border: `1px solid ${alpha("#fff", 0.1)}`,
-                  background: alpha(ACM_COLORS.cardBg, 0.5),
+                  border: `1px solid ${alpha("#000", 0.1)}`,
+                  background: alpha("#f8f9fa", 0.8),
                   display: "flex", alignItems: "center", justifyContent: "center",
                   cursor: "pointer", transition: "all 0.2s",
                   color: ACM_COLORS.textMuted,
@@ -461,11 +461,11 @@ const TradingInstruments = () => {
               fontSize: "0.875rem",
               fontWeight: 600,
               textDecoration: "none",
-              border: `1px solid ${alpha(ACM_COLORS.orange, 0.25)}`,
+              border: `1px solid ${alpha(ACM_COLORS.orange, 0.35)}`,
               borderRadius: "100px",
               px: 3,
               py: 1,
-              background: alpha(ACM_COLORS.orange, 0.06),
+              background: "transparent",
               transition: "all 0.2s",
               "& svg": { transition: "transform 0.2s" },
               "&:hover": { background: alpha(ACM_COLORS.orange, 0.12), borderColor: alpha(ACM_COLORS.orange, 0.5) },

@@ -46,9 +46,9 @@ const FeatureCard = ({ Icon, title, accent, desc, delay, wide = false }) => (
       cursor: "pointer",
       position: "relative",
       borderRadius: 3,
-      border: `1px solid ${alpha("#fff", 0.06)}`,
-      borderLeft: `3px solid ${alpha(accent, 0.5)}`,
-      background: `linear-gradient(135deg, ${alpha(ACM_COLORS.cardBg, 0.9)} 0%, ${alpha(ACM_COLORS.surfaceBg, 0.8)} 100%)`,
+      border: `1px solid ${alpha("#000", 0.06)}`,
+      borderLeft: `3px solid ${alpha(accent, 0.4)}`,
+      background: `#ffffff`,
       p: { xs: 3, md: wide ? 4 : 3.5 },
       overflow: "hidden",
       gridColumn: wide ? { lg: "span 2" } : "span 1",
@@ -95,7 +95,7 @@ const FeatureCard = ({ Icon, title, accent, desc, delay, wide = false }) => (
           flex: 1,
           fontSize: wide ? "1.25rem" : "1rem",
           fontWeight: 700,
-          color: "#fff",
+          color: "#111827",
           lineHeight: 1.3,
           transition: "color 0.25s",
           position: "relative",
@@ -148,7 +148,7 @@ const PlatformFeatures = () => (
     component="section"
     sx={{
       py: { xs: 6, md: 8 },
-      background: `linear-gradient(180deg, ${ACM_COLORS.darkBg} 0%, ${ACM_COLORS.deepPurple} 100%)`,
+      background: `linear-gradient(180deg, #f0f2f5 0%, #ffffff 100%)`,
       position: "relative",
       overflow: "hidden",
     }}
@@ -158,7 +158,7 @@ const PlatformFeatures = () => (
       sx={{
         position: "absolute",
         inset: 0,
-        backgroundImage: `radial-gradient(${alpha("#fff", 0.04)} 1px, transparent 1px)`,
+        backgroundImage: `radial-gradient(${alpha("#000", 0.05)} 1px, transparent 1px)`,
         backgroundSize: "28px 28px",
         pointerEvents: "none",
         maskImage:
@@ -240,7 +240,7 @@ const PlatformFeatures = () => (
           sx={{
             fontSize: { xs: "2rem", sm: "2.6rem", md: "3.2rem" },
             fontWeight: 700,
-            color: "#fff",
+            color: "#111827",
             lineHeight: 1.15,
             mb: 2,
           }}

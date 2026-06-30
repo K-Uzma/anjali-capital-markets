@@ -42,7 +42,7 @@ const Hero = () => (
       overflow: "hidden",
       pt: { xs: 14, md: 18 },
       pb: { xs: 10, md: 14 },
-      background: `linear-gradient(135deg, #120d1c 0%, #1e1530 40%, ${ACM_COLORS.deepPurple} 75%, #241a36 100%)`,
+      background: `linear-gradient(135deg, #f8f9fa 0%, #ffffff 40%, #ffffff 75%, #f0f2f5 100%)`,
     }}
   >
     {/* Ambient glow — top left */}
@@ -78,7 +78,7 @@ const Hero = () => (
       sx={{
         position: "absolute",
         inset: 0,
-        backgroundImage: `radial-gradient(${alpha("#fff", 0.045)} 1px, transparent 1px)`,
+        backgroundImage: `radial-gradient(${alpha("#000", 0.06)} 1px, transparent 1px)`,
         backgroundSize: "32px 32px",
         maskImage:
           "radial-gradient(ellipse 90% 80% at 50% 50%, black 30%, transparent 100%)",
@@ -174,7 +174,7 @@ const Hero = () => (
                 fontWeight: 800,
                 lineHeight: 1.08,
                 letterSpacing: "-0.03em",
-                color: "#fff",
+                color: "#111827",
                 mb: 3,
               }}
             >
@@ -243,15 +243,15 @@ const Hero = () => (
                 variant="outlined"
                 endIcon={<ArrowForward sx={{ fontSize: "1rem !important" }} />}
                 sx={{
-                  borderColor: alpha("#fff", 0.2),
-                  color: alpha("#fff", 0.85),
+                  borderColor: alpha("#000", 0.15),
+                  color: alpha("#000", 0.7),
                   borderRadius: "100px",
                   px: 4,
                   py: 1.6,
                   fontSize: "0.92rem",
                   fontWeight: 500,
                   backdropFilter: "blur(8px)",
-                  background: alpha("#fff", 0.04),
+                  background: "transparent",
                   "&:hover": {
                     borderColor: ACM_COLORS.orange,
                     color: ACM_COLORS.orange,
@@ -274,7 +274,7 @@ const Hero = () => (
                 gap: { xs: 2, sm: 3 },
                 flexWrap: "wrap",
                 pt: 2.5,
-                borderTop: `1px solid ${alpha("#fff", 0.08)}`,
+                borderTop: `1px solid ${alpha("#000", 0.08)}`,
               }}
             >
               {STATS.map((s, idx) => (
@@ -297,7 +297,7 @@ const Hero = () => (
                         sx={{
                           fontSize: "1rem",
                           fontWeight: 700,
-                          color: "#fff",
+                          color: "#111827",
                           lineHeight: 1,
                         }}
                       >
@@ -320,7 +320,7 @@ const Hero = () => (
                       sx={{
                         width: "1px",
                         height: 32,
-                        background: alpha("#fff", 0.1),
+                        background: alpha("#000", 0.1),
                       }}
                     />
                   )}
@@ -388,7 +388,7 @@ const Hero = () => (
               py: 1,
               borderRadius: 2,
               background: alpha(ACM_COLORS.cardBg, 0.9),
-              border: `1px solid ${alpha("#fff", 0.1)}`,
+              border: `1px solid ${alpha("#000", 0.1)}`,
               backdropFilter: "blur(16px)",
               boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
             }}
@@ -410,7 +410,7 @@ const Hero = () => (
               sx={{
                 fontSize: "0.75rem",
                 fontWeight: 700,
-                color: "#fff",
+                color: "#111827",
                 letterSpacing: 0.5,
               }}
             >
@@ -429,7 +429,7 @@ const Hero = () => (
         left: 0,
         right: 0,
         height: 100,
-        background: `linear-gradient(to bottom, transparent, ${ACM_COLORS.darkBg})`,
+        background: `linear-gradient(to bottom, transparent, #f0f2f5)`,
         pointerEvents: "none",
       }}
     />

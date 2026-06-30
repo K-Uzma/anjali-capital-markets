@@ -91,10 +91,10 @@ const FAQItem = ({ item, index, isOpen, onToggle }) => (
     sx={{
       borderRadius: 2,
       overflow: "hidden",
-      border: `1px solid ${isOpen ? alpha(ACM_COLORS.orange, 0.35) : alpha("#fff", 0.07)}`,
+      border: `1px solid ${isOpen ? alpha(ACM_COLORS.orange, 0.35) : alpha("#000", 0.07)}`,
       background: isOpen
-        ? `linear-gradient(135deg, ${alpha(ACM_COLORS.cardBg, 0.9)}, ${alpha(ACM_COLORS.surfaceBg, 0.9)})`
-        : alpha(ACM_COLORS.cardBg, 0.45),
+        ? `linear-gradient(135deg, #ffffff, #f8f9fa)`
+        : "#ffffff",
       transition:
         "border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease",
       boxShadow: isOpen
@@ -103,8 +103,8 @@ const FAQItem = ({ item, index, isOpen, onToggle }) => (
       "&:hover": {
         borderColor: isOpen
           ? alpha(ACM_COLORS.orange, 0.35)
-          : alpha("#fff", 0.14),
-        background: isOpen ? undefined : alpha(ACM_COLORS.cardBg, 0.65),
+          : alpha("#000", 0.14),
+        background: isOpen ? undefined : alpha("#000", 0.02),
       },
     }}
   >
@@ -126,7 +126,7 @@ const FAQItem = ({ item, index, isOpen, onToggle }) => (
         sx={{
           fontWeight: isOpen ? 600 : 500,
           fontSize: { xs: "0.9rem", md: "0.975rem" },
-          color: isOpen ? "#fff" : ACM_COLORS.textSecondary,
+          color: isOpen ? "#111827" : ACM_COLORS.textSecondary,
           lineHeight: 1.5,
           transition: "color 0.2s",
           flex: 1,
@@ -144,8 +144,8 @@ const FAQItem = ({ item, index, isOpen, onToggle }) => (
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
-          background: isOpen ? ACM_COLORS.orange : alpha("#fff", 0.06),
-          border: `1px solid ${isOpen ? ACM_COLORS.orange : alpha("#fff", 0.1)}`,
+          background: isOpen ? ACM_COLORS.orange : alpha("#000", 0.06),
+          border: `1px solid ${isOpen ? ACM_COLORS.orange : alpha("#000", 0.1)}`,
           transition: "background 0.25s, border-color 0.25s",
         }}
       >
@@ -217,7 +217,7 @@ const FAQ = () => {
       component="section"
       sx={{
         py: { xs: 6, md: 9 },
-        background: `linear-gradient(180deg, ${ACM_COLORS.darkBg} 0%, ${ACM_COLORS.deepPurple} 100%)`,
+        background: `linear-gradient(180deg, #f0f2f5 0%, #ffffff 100%)`,
         position: "relative",
         overflow: "hidden",
       }}
@@ -293,7 +293,7 @@ const FAQ = () => {
             sx={{
               fontSize: { xs: "1.85rem", sm: "2.4rem", md: "3rem" },
               fontWeight: 700,
-              color: "#fff",
+              color: "#111827",
               mb: 1.5,
               lineHeight: 1.2,
             }}
@@ -362,9 +362,9 @@ const FAQ = () => {
                   borderRadius: "100px",
                   background: isActive
                     ? ACM_COLORS.orange
-                    : alpha("#fff", 0.06),
+                    : alpha("#000", 0.06),
                   color: isActive ? "#fff" : ACM_COLORS.textSecondary,
-                  border: `1px solid ${isActive ? ACM_COLORS.orange : alpha("#fff", 0.1)}`,
+                  border: `1px solid ${isActive ? ACM_COLORS.orange : alpha("#000", 0.1)}`,
                   cursor: "pointer",
                   transition: "all 0.2s ease",
                   "&:hover": {
