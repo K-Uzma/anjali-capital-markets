@@ -5,8 +5,18 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const MARKET_DATA = [
   { symbol: "Apple Inc.", price: 283.78, change: 8.63, changePercent: 3.14 },
-  { symbol: "Alphabet Inc. (Google)", price: 337.39, change: -6.32, changePercent: -1.84 },
-  { symbol: "Microsoft Corp.", price: 372.97, change: 20.14, changePercent: 5.71 },
+  {
+    symbol: "Alphabet Inc. (Google)",
+    price: 337.39,
+    change: -6.32,
+    changePercent: -1.84,
+  },
+  {
+    symbol: "Microsoft Corp.",
+    price: 372.97,
+    change: 20.14,
+    changePercent: 5.71,
+  },
   { symbol: "Tesla, Inc.", price: 379.71, change: 4.59, changePercent: 1.22 },
   { symbol: "Bitcoin", price: 60121.99, change: 647.97, changePercent: 1.08 },
   { symbol: "ETH/USD", price: 1583.45, change: -28.32, changePercent: -1.76 },
@@ -34,19 +44,30 @@ const TickerItem = ({ item }) => {
         flexShrink: 0,
       }}
     >
-      <Typography sx={{ fontSize: "0.78rem", fontWeight: 500, color: "#1f2937", mr: 0.5 }}>
+      <Typography
+        sx={{ fontSize: "0.78rem", fontWeight: 500, color: "#1f2937", mr: 0.5 }}
+      >
         {item.symbol}
       </Typography>
-      <Typography sx={{ fontSize: "0.78rem", fontWeight: 600, color: "#111827" }}>
-        ${item.price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+      <Typography
+        sx={{ fontSize: "0.78rem", fontWeight: 600, color: "#111827" }}
+      >
+        $
+        {item.price.toLocaleString("en-US", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}
       </Typography>
       <Box sx={{ display: "inline-flex", alignItems: "center", color }}>
         <ArrowIcon sx={{ fontSize: "1rem", mx: "-2px" }} />
         <Typography sx={{ fontSize: "0.78rem", fontWeight: 500, color }}>
           {Math.abs(item.change).toFixed(2)}
         </Typography>
-        <Typography sx={{ fontSize: "0.78rem", fontWeight: 500, color, ml: 0.4 }}>
-          {isPositive ? "+" : ""}{item.changePercent.toFixed(2)}%
+        <Typography
+          sx={{ fontSize: "0.78rem", fontWeight: 500, color, ml: 0.4 }}
+        >
+          {isPositive ? "+" : ""}
+          {item.changePercent.toFixed(2)}%
         </Typography>
       </Box>
     </Box>
