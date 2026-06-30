@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box, Container, Typography, Chip, alpha } from "@mui/material";
 import { Add as AddIcon, Remove as RemoveIcon } from "@mui/icons-material";
+import { motion, AnimatePresence } from "framer-motion";
 import { ACM_COLORS } from "../../../theme";
 
 const CATEGORIES = [
@@ -82,6 +83,11 @@ const FAQ_DATA = [
 
 const FAQItem = ({ item, index, isOpen, onToggle }) => (
   <Box
+    component={motion.div}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4, delay: index * 0.06 }}
     sx={{
       borderRadius: 2,
       overflow: "hidden",
@@ -152,9 +158,13 @@ const FAQItem = ({ item, index, isOpen, onToggle }) => (
     </Box>
 
     {/* Answer */}
-    <>
+    <AnimatePresence initial={false}>
       {isOpen && (
-        <div
+        <motion.div
+          key="answer"
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
           style={{ overflow: "hidden" }}
         >
@@ -182,9 +192,9 @@ const FAQItem = ({ item, index, isOpen, onToggle }) => (
               {item.answer}
             </Typography>
           </Box>
-        </div>
+        </motion.div>
       )}
-    </>
+    </AnimatePresence>
   </Box>
 );
 
@@ -372,12 +382,15 @@ const FAQ = () => {
         </Box>
 
         {/* FAQ List */}
-        <>
-          <div transition={{ duration: 0.2 }}>
-            <Box
-              data-aos="fade-down"
-              sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}
-            >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeCategory}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
               {filtered.map((item, idx) => (
                 <FAQItem
                   key={`${activeCategory}-${idx}`}
@@ -388,8 +401,8 @@ const FAQ = () => {
                 />
               ))}
             </Box>
-          </div>
-        </>
+          </motion.div>
+        </AnimatePresence>
       </Container>
     </Box>
   );
