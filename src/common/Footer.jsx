@@ -4,7 +4,6 @@ import {
   Container,
   Typography,
   Link as MuiLink,
-  IconButton,
   Divider,
   Stack,
   Grid,
@@ -49,31 +48,47 @@ const PLATFORM = [
 
 const SOCIAL = [
   {
-    icon: <Facebook sx={{ fontSize: "1rem" }} />,
+    icon: <Facebook sx={{ fontSize: "1.1rem" }} />,
     href: "#",
     label: "Facebook",
+    gradientFrom: "#1877f2",
+    gradientTo: "#0d5fc2",
   },
   {
-    icon: <Instagram sx={{ fontSize: "1rem" }} />,
+    icon: <Instagram sx={{ fontSize: "1.1rem" }} />,
     href: "#",
     label: "Instagram",
+    gradientFrom: "#f09433",
+    gradientTo: "#c12f94",
   },
   {
-    icon: <LinkedIn sx={{ fontSize: "1rem" }} />,
+    icon: <LinkedIn sx={{ fontSize: "1.1rem" }} />,
     href: "#",
     label: "LinkedIn",
+    gradientFrom: "#0077b5",
+    gradientTo: "#00a0dc",
   },
   {
-    icon: <Telegram sx={{ fontSize: "1rem" }} />,
+    icon: <Telegram sx={{ fontSize: "1.1rem" }} />,
     href: "#",
     label: "Telegram",
+    gradientFrom: "#2aabee",
+    gradientTo: "#1a7fc1",
   },
   {
-    icon: <StarOutline sx={{ fontSize: "1rem" }} />,
+    icon: <StarOutline sx={{ fontSize: "1.1rem" }} />,
     href: "#",
     label: "Trustpilot",
+    gradientFrom: "#00b67a",
+    gradientTo: "#007a52",
   },
-  { icon: <YouTube sx={{ fontSize: "1rem" }} />, href: "#", label: "YouTube" },
+  {
+    icon: <YouTube sx={{ fontSize: "1.1rem" }} />,
+    href: "#",
+    label: "YouTube",
+    gradientFrom: "#ff4e45",
+    gradientTo: "#c1001f",
+  },
 ];
 
 const CONTACT_ITEMS = [
@@ -216,38 +231,95 @@ const Footer = () => (
             global financial markets — gold, forex, indices, and more.
           </Typography>
 
-          {/* Social Icons */}
-          <Stack direction="row" flexWrap="wrap" gap={0.75}>
+          {/* Social Icons — gradient expand menu */}
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
             {SOCIAL.map((s) => (
-              <IconButton
+              <Box
                 key={s.label}
                 component="a"
                 href={s.href}
                 aria-label={s.label}
                 target="_blank"
                 rel="noopener noreferrer"
-                size="small"
+                style={{ "--gf": s.gradientFrom, "--gt": s.gradientTo }}
                 sx={{
-                  width: 34,
-                  height: 34,
-                  border: `1px solid ${alpha(ACM_COLORS.orange, 0.35)}`,
-                  color: ACM_COLORS.orange,
-                  borderRadius: "50%",
-                  background: alpha(ACM_COLORS.orange, 0.06),
-                  "&:hover": {
-                    background: ACM_COLORS.orange,
-                    color: "#fff",
-                    borderColor: ACM_COLORS.orange,
-                    transform: "translateY(-3px)",
-                    boxShadow: `0 6px 16px ${alpha(ACM_COLORS.orange, 0.35)}`,
+                  position: "relative",
+                  width: 36,
+                  height: 36,
+                  borderRadius: "100px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  overflow: "hidden",
+                  textDecoration: "none",
+                  flexShrink: 0,
+                  background: "#fff",
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.12)",
+                  transition:
+                    "width 0.45s cubic-bezier(0.4,0,0.2,1), box-shadow 0.45s ease",
+                  cursor: "pointer",
+                  // gradient overlay
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    inset: 0,
+                    borderRadius: "100px",
+                    background:
+                      "linear-gradient(45deg, var(--gf), var(--gt))",
+                    opacity: 0,
+                    transition: "opacity 0.45s ease",
+                    zIndex: 0,
                   },
-                  transition: "all 0.22s ease",
+                  "&:hover": {
+                    width: 120,
+                    boxShadow: "0 8px 24px -4px var(--gf)",
+                  },
+                  "&:hover::before": { opacity: 1 },
+                  "&:hover .s-icon": { transform: "scale(0)", opacity: 0 },
+                  "&:hover .s-label": { transform: "scale(1)", opacity: 1 },
                 }}
               >
-                {s.icon}
-              </IconButton>
+                {/* Icon */}
+                <Box
+                  className="s-icon"
+                  sx={{
+                    position: "relative",
+                    zIndex: 1,
+                    display: "flex",
+                    alignItems: "center",
+                    color: "rgba(0,0,0,0.45)",
+                    transform: "scale(1)",
+                    opacity: 1,
+                    transition: "transform 0.25s ease, opacity 0.25s ease",
+                    flexShrink: 0,
+                  }}
+                >
+                  {s.icon}
+                </Box>
+
+                {/* Label */}
+                <Typography
+                  className="s-label"
+                  sx={{
+                    position: "absolute",
+                    zIndex: 1,
+                    color: "#fff",
+                    fontSize: "0.68rem",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: 1,
+                    whiteSpace: "nowrap",
+                    transform: "scale(0)",
+                    opacity: 0,
+                    transition:
+                      "transform 0.25s ease 0.1s, opacity 0.25s ease 0.1s",
+                  }}
+                >
+                  {s.label}
+                </Typography>
+              </Box>
             ))}
-          </Stack>
+          </Box>
         </Grid>
 
         {/* Services */}
