@@ -91,21 +91,18 @@ const FAQItem = ({ item, index, isOpen, onToggle }) => (
     transition={{ duration: 0.4, delay: index * 0.06 }}
     sx={{
       borderRadius: 2,
-      overflow: "hidden",
-      border: `1px solid ${isOpen ? alpha(ACM_COLORS.orange, 0.35) : alpha("#000", 0.07)}`,
+      border: "2px solid transparent",
       background: isOpen
-        ? `linear-gradient(135deg, #ffffff, #f8f9fa)`
-        : "#ffffff",
-      transition:
-        "border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease",
+        ? `linear-gradient(135deg, #ffffff, #f8f9fa) padding-box, linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box`
+        : `linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(${alpha("#000", 0.07)}, ${alpha("#000", 0.07)}) border-box`,
+      transition: "background 0.25s ease, box-shadow 0.25s ease",
       boxShadow: isOpen
-        ? `0 4px 24px ${alpha(ACM_COLORS.orange, 0.1)}, 0 0 0 1px ${alpha(ACM_COLORS.orange, 0.08)}`
+        ? `0 4px 24px ${alpha(ACM_COLORS.orange, 0.1)}, 0 2px 12px ${alpha("#c44d8e", 0.07)}`
         : "none",
       "&:hover": {
-        borderColor: isOpen
-          ? alpha(ACM_COLORS.orange, 0.35)
-          : alpha("#000", 0.14),
-        background: isOpen ? undefined : alpha("#000", 0.02),
+        background: isOpen
+          ? `linear-gradient(135deg, #ffffff, #f8f9fa) padding-box, linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box`
+          : `linear-gradient(${alpha("#000", 0.02)}, ${alpha("#000", 0.02)}) padding-box, linear-gradient(${alpha("#000", 0.14)}, ${alpha("#000", 0.14)}) border-box`,
       },
     }}
   >
@@ -145,8 +142,10 @@ const FAQItem = ({ item, index, isOpen, onToggle }) => (
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
-          background: isOpen ? ACM_COLORS.orange : alpha("#000", 0.06),
-          border: `1px solid ${isOpen ? ACM_COLORS.orange : alpha("#000", 0.1)}`,
+          background: isOpen
+            ? "linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%)"
+            : alpha("#000", 0.06),
+          border: `1px solid ${isOpen ? "transparent" : alpha("#000", 0.1)}`,
           transition: "background 0.25s, border-color 0.25s",
         }}
       >
@@ -179,7 +178,7 @@ const FAQItem = ({ item, index, isOpen, onToggle }) => (
             <Box
               sx={{
                 height: 1,
-                background: `linear-gradient(90deg, ${alpha(ACM_COLORS.orange, 0.4)}, transparent)`,
+                background: `linear-gradient(90deg, #db7146, #c44d8e 55%, #7950bf, transparent)`,
                 mb: 2,
               }}
             />
@@ -341,17 +340,18 @@ const FAQ = () => {
                   px: 1,
                   height: 36,
                   borderRadius: "100px",
+                  overflow: "hidden",
                   border: "2px solid transparent",
                   background: isActive
-                    ? "linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%)"
+                    ? "linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box"
                     : "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box",
                   color: isActive ? "#fff" : ACM_COLORS.orange,
                   cursor: "pointer",
                   transition: "background 0.25s ease, color 0.25s ease",
                   "&:hover": {
                     background: isActive
-                      ? "linear-gradient(135deg, #e5845a 0%, #d0609a 55%, #8f64cf 100%)"
-                      : "linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%)",
+                      ? "linear-gradient(135deg, #e5845a 0%, #d0609a 55%, #8f64cf 100%) border-box"
+                      : "linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box",
                     color: "#fff",
                   },
                   "& .MuiChip-label": { px: 1.25 },
