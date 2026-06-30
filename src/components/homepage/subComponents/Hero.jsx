@@ -333,7 +333,7 @@ const Hero = () => (
         {/* ── RIGHT: Image ── */}
         <Box
           data-aos="fade-down-left"
-          data-aos-delay="50"
+          // data-aos-delay="50"
           sx={{
             position: "relative",
             display: "flex",
