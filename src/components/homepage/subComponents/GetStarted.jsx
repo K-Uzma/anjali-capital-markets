@@ -55,6 +55,20 @@ const GetStarted = () => (
       overflow: "hidden",
     }}
   >
+    <Box
+      sx={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "80%",
+        height: "80%",
+        borderRadius: "50%",
+        background: `radial-gradient(ellipse, ${alpha(ACM_COLORS.orange, 0.16)} 0%, transparent 70%)`,
+        filter: "blur(40px)",
+        pointerEvents: "none",
+      }}
+    />
     <Container
       maxWidth="xl"
       sx={{ px: { xs: 2, sm: 3, xl: 4 }, position: "relative", zIndex: 1 }}
