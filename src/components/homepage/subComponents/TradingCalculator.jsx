@@ -943,7 +943,7 @@ const TradingCalculator = () => {
                       sx={{
                         fontSize: "1rem",
                         fontWeight: 600,
-                        color: alpha("#000", 0.35),
+                        // color: alpha("#000", 0.35),
                         mb: 0.75,
                       }}
                     >
@@ -952,7 +952,7 @@ const TradingCalculator = () => {
                     <Typography
                       sx={{
                         fontSize: "0.8rem",
-                        color: alpha(ACM_COLORS.textMuted, 0.6),
+                        // color: alpha(ACM_COLORS.textMuted, 0.6),
                         maxWidth: 260,
                         lineHeight: 1.65,
                       }}

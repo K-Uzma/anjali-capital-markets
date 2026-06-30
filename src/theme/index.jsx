@@ -14,8 +14,8 @@ export const ACM_COLORS = {
   surfaceBg: '#f8f7fb',
   // Text
   textPrimary: '#2d233b',
-  textSecondary: 'rgba(45,35,59,0.65)',
-  textMuted: 'rgba(45,35,59,0.65)',
+  textSecondary: 'rgba(45,35,59,0.95)',
+  textMuted: 'rgba(45,35,59,0.85)',
   // Neutrals
   white: '#ffffff',
   black: '#000000',
