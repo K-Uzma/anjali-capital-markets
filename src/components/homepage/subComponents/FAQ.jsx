@@ -3,6 +3,7 @@ import { Box, Container, Typography, Chip, alpha } from "@mui/material";
 import { Add as AddIcon, Remove as RemoveIcon } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
 import { ACM_COLORS } from "../../../theme";
+import CustomCaption from "../../../common/CustomCaption";
 
 const CATEGORIES = [
   "All",
@@ -251,41 +252,7 @@ const FAQ = () => {
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
         {/* Header */}
         <Box sx={{ textAlign: "center", mb: { xs: 5, md: 7 } }}>
-          <Box
-            data-aos="fade-left"
-            sx={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 1,
-              background: alpha(ACM_COLORS.orange, 0.12),
-              border: `1px solid ${alpha(ACM_COLORS.orange, 0.25)}`,
-              borderRadius: "100px",
-              px: 2.5,
-              py: 0.75,
-              mb: 2.5,
-            }}
-          >
-            <Box
-              sx={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                background: ACM_COLORS.orange,
-                boxShadow: `0 0 8px ${alpha(ACM_COLORS.orange, 0.7)}`,
-              }}
-            />
-            <Typography
-              sx={{
-                color: ACM_COLORS.orange,
-                fontSize: "0.75rem",
-                fontWeight: 600,
-                letterSpacing: 1.5,
-                textTransform: "uppercase",
-              }}
-            >
-              Got Questions?
-            </Typography>
-          </Box>
+          <CustomCaption text="Got Questions?" />
 
           <Typography
             data-aos="fade-right"
@@ -355,24 +322,23 @@ const FAQ = () => {
                 label={cat}
                 onClick={() => handleCategoryChange(cat)}
                 sx={{
-                  fontWeight: isActive ? 600 : 400,
+                  fontWeight: isActive ? 600 : 500,
                   fontSize: "0.8rem",
                   px: 1,
                   height: 36,
                   borderRadius: "100px",
+                  border: "2px solid transparent",
                   background: isActive
-                    ? ACM_COLORS.orange
-                    : alpha("#000", 0.06),
-                  color: isActive ? "#fff" : ACM_COLORS.textSecondary,
-                  border: `1px solid ${isActive ? ACM_COLORS.orange : alpha("#000", 0.1)}`,
+                    ? "linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%)"
+                    : "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box",
+                  color: isActive ? "#fff" : ACM_COLORS.orange,
                   cursor: "pointer",
-                  transition: "all 0.2s ease",
+                  transition: "background 0.25s ease, color 0.25s ease",
                   "&:hover": {
                     background: isActive
-                      ? "#c4633e"
-                      : alpha(ACM_COLORS.orange, 0.1),
-                    borderColor: ACM_COLORS.orange,
-                    color: isActive ? "#fff" : ACM_COLORS.orange,
+                      ? "linear-gradient(135deg, #e5845a 0%, #d0609a 55%, #8f64cf 100%)"
+                      : "linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%)",
+                    color: "#fff",
                   },
                   "& .MuiChip-label": { px: 1.25 },
                 }}

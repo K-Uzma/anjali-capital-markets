@@ -141,9 +141,16 @@ const Newsletter = () => {
               label={p.label}
               size="small"
               sx={{
-                background: alpha(ACM_COLORS.orange, 0.12),
-                color: ACM_COLORS.orange,
-                border: `1px solid ${alpha(ACM_COLORS.orange, 0.25)}`,
+                borderRadius: 5,
+                border: "1px solid transparent",
+                background:
+                  "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box",
+                transition: "background 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+                cursor: "default",
+                "&:hover": {
+                  background:
+                    "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #7950bf 0%, #c44d8e 55%, #db7146 100%) border-box",
+                },
                 fontSize: "0.75rem",
                 fontWeight: 500,
                 "& .MuiChip-icon": { color: ACM_COLORS.orange },
@@ -190,11 +197,11 @@ const Newsletter = () => {
           <Typography
             data-aos="fade-left"
             sx={{
-            color: "rgba(0,0,0,0.55)",
-            maxWidth: 460,
-            mx: "auto",
-            fontSize: { xs: "0.95rem", md: "1rem" },
-            lineHeight: 1.75,
+              color: "rgba(0,0,0,0.55)",
+              maxWidth: 460,
+              mx: "auto",
+              fontSize: { xs: "0.95rem", md: "1rem" },
+              lineHeight: 1.75,
             }}
           >
             Join thousands of traders and get weekly insights, market news, and
@@ -251,8 +258,6 @@ const Newsletter = () => {
             type="submit"
             variant="contained"
             sx={{
-              background: ACM_COLORS.orange,
-              borderRadius: "100px",
               px: { xs: 2.5, md: 3.5 },
               py: 1.25,
               flexShrink: 0,
@@ -261,11 +266,9 @@ const Newsletter = () => {
               fontWeight: 600,
               boxShadow: `0 4px 16px ${alpha(ACM_COLORS.orange, 0.4)}`,
               "&:hover": {
-                background: "#c4633e",
                 boxShadow: `0 6px 20px ${alpha(ACM_COLORS.orange, 0.5)}`,
                 transform: "translateY(-1px)",
               },
-              transition: "all 0.2s",
             }}
           >
             Subscribe

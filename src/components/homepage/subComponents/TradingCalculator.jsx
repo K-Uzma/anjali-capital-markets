@@ -23,6 +23,7 @@ import {
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { ACM_COLORS } from "../../../theme";
+import CustomCaption from "../../../common/CustomCaption";
 
 /* ─── Market / Instrument data ─────────────────────────────── */
 const MARKETS = {
@@ -381,33 +382,7 @@ const TradingCalculator = () => {
       >
         {/* ── Section header ── */}
         <Box sx={{ textAlign: "center", mb: { xs: 5, md: 7 } }}>
-          <Box
-            data-aos="fade-left"
-            sx={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 1,
-              background: alpha(ACM_COLORS.orange, 0.12),
-              border: `1px solid ${alpha(ACM_COLORS.orange, 0.25)}`,
-              borderRadius: "100px",
-              px: 2.5,
-              py: 0.75,
-              mb: 2,
-            }}
-          >
-            <Calculate sx={{ fontSize: "0.85rem", color: ACM_COLORS.orange }} />
-            <Typography
-              sx={{
-                color: ACM_COLORS.orange,
-                fontSize: "0.75rem",
-                fontWeight: 600,
-                letterSpacing: 1.5,
-                textTransform: "uppercase",
-              }}
-            >
-              Trading Calculator
-            </Typography>
-          </Box>
+          <CustomCaption text="Trading Calculator" />
           <Typography
             data-aos="fade-right"
             variant="h2"
@@ -895,8 +870,6 @@ const TradingCalculator = () => {
                 startIcon={<Calculate />}
                 endIcon={<ArrowForward />}
                 sx={{
-                  background: cfg ? ACM_COLORS.orange : alpha("#000", 0.08),
-                  color: cfg ? "#fff" : ACM_COLORS.textMuted,
                   borderRadius: 2,
                   py: 1.6,
                   fontSize: "0.9rem",
@@ -906,7 +879,6 @@ const TradingCalculator = () => {
                     ? `0 8px 24px ${alpha(ACM_COLORS.orange, 0.35)}`
                     : "none",
                   "&:hover": {
-                    background: cfg ? "#c4633e" : undefined,
                     boxShadow: cfg
                       ? `0 12px 32px ${alpha(ACM_COLORS.orange, 0.45)}`
                       : "none",
@@ -915,7 +887,6 @@ const TradingCalculator = () => {
                     background: alpha("#000", 0.06),
                     color: alpha("#000", 0.25),
                   },
-                  transition: "all 0.25s",
                 }}
               >
                 Calculate

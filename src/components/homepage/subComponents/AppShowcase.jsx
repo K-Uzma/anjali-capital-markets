@@ -9,6 +9,7 @@ import {
 import { Link } from "react-router-dom";
 import { ACM_COLORS } from "../../../theme";
 import platformImg from "../../../assets/home_2nd_15-26.webp";
+import CustomCaption from "../../../common/CustomCaption";
 
 const FEATURES = [
   {
@@ -113,7 +114,7 @@ const AppShowcase = () => (
               display: "block",
               position: "relative",
               zIndex: 1,
-              filter: "drop-shadow(0 32px 64px rgba(0,0,0,0.55))",
+              // filter: "drop-shadow(0 32px 64px rgba(0,0,0,0.55))",
             }}
           />
 
@@ -150,42 +151,8 @@ const AppShowcase = () => (
         {/* ── RIGHT: Content ── */}
         <Box sx={{ order: { xs: 1, lg: 2 } }}>
           {/* Badge */}
-          <Box data-aos="fade-down-left">
-            <Box
-              sx={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 1,
-                background: alpha(ACM_COLORS.orange, 0.12),
-                border: `1px solid ${alpha(ACM_COLORS.orange, 0.25)}`,
-                borderRadius: "100px",
-                px: 2.5,
-                py: 0.75,
-                mb: 2.5,
-              }}
-            >
-              <Box
-                sx={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: "50%",
-                  background: ACM_COLORS.orange,
-                  boxShadow: `0 0 8px ${alpha(ACM_COLORS.orange, 0.7)}`,
-                }}
-              />
-              <Typography
-                sx={{
-                  color: ACM_COLORS.orange,
-                  fontSize: "0.75rem",
-                  fontWeight: 600,
-                  letterSpacing: 1.5,
-                  textTransform: "uppercase",
-                }}
-              >
-                MT5 Platform
-              </Typography>
-            </Box>
-          </Box>
+
+          <CustomCaption text="MT5 Platform" />
 
           {/* Title */}
           <Box data-aos="fade-left" data-aos-delay="80">
@@ -318,19 +285,15 @@ const AppShowcase = () => (
               to="#"
               endIcon={<ArrowForward />}
               sx={{
-                background: ACM_COLORS.orange,
-                borderRadius: "100px",
                 px: 3.5,
                 py: 1.4,
                 fontSize: "0.875rem",
                 fontWeight: 700,
                 boxShadow: `0 8px 24px ${alpha(ACM_COLORS.orange, 0.38)}`,
                 "&:hover": {
-                  background: "#c4633e",
                   transform: "translateY(-2px)",
                   boxShadow: `0 12px 32px ${alpha(ACM_COLORS.orange, 0.48)}`,
                 },
-                transition: "all 0.25s",
               }}
             >
               Open Account
@@ -340,19 +303,10 @@ const AppShowcase = () => (
               component={Link}
               to="#"
               sx={{
-                borderColor: alpha("#000", 0.18),
-                color: alpha("#000", 0.7),
-                borderRadius: "100px",
                 px: 3.5,
                 py: 1.4,
                 fontSize: "0.875rem",
                 fontWeight: 600,
-                "&:hover": {
-                  borderColor: alpha("#000", 0.4),
-                  color: "#000",
-                  background: alpha("#000", 0.04),
-                },
-                transition: "all 0.2s",
               }}
             >
               Learn More

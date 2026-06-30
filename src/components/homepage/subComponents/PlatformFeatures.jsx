@@ -14,6 +14,7 @@ import {
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { ACM_COLORS } from "../../../theme";
+import CustomCaption from "../../../common/CustomCaption";
 
 /* ─── Feature cards ─────────────────────────────────────────── */
 const FEATURES = [
@@ -198,41 +199,7 @@ const PlatformFeatures = () => (
     >
       {/* ── Centered header ── */}
       <Box sx={{ textAlign: "center", mb: { xs: 5, md: 7 } }}>
-        <Box
-          data-aos="fade-left"
-          sx={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 1,
-            background: alpha(ACM_COLORS.orange, 0.12),
-            border: `1px solid ${alpha(ACM_COLORS.orange, 0.25)}`,
-            borderRadius: "100px",
-            px: 2.5,
-            py: 0.75,
-            mb: 2.5,
-          }}
-        >
-          <Box
-            sx={{
-              width: 6,
-              height: 6,
-              borderRadius: "50%",
-              background: ACM_COLORS.orange,
-              boxShadow: `0 0 8px ${alpha(ACM_COLORS.orange, 0.7)}`,
-            }}
-          />
-          <Typography
-            sx={{
-              color: ACM_COLORS.orange,
-              fontSize: "0.75rem",
-              fontWeight: 600,
-              letterSpacing: 1.5,
-              textTransform: "uppercase",
-            }}
-          >
-            Why Choose ACM
-          </Typography>
-        </Box>
+        <CustomCaption text="Why Choose ACM" />
 
         <Typography
           data-aos="fade-right"

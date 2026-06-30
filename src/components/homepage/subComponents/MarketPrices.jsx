@@ -628,7 +628,7 @@ const RangeBar = ({ price, w52l, w52h, up, cat }) => {
           flex: 1,
           height: 4,
           borderRadius: 2,
-          background: alpha("#000", 0.08),
+          background: alpha("#fff", 0.08),
           position: "relative",
           minWidth: 60,
           display: { xs: "none", md: "block" },
@@ -950,7 +950,7 @@ const MarketPrices = () => {
                     transition: "color 0.2s",
                     userSelect: "none",
                     "&:hover": {
-                      color: active ? ACM_COLORS.orange : alpha("#fff", 0.75),
+                      color: active ? ACM_COLORS.orange : ACM_COLORS.textPrimary,
                     },
                     "&::after": {
                       content: '""',
@@ -1024,7 +1024,13 @@ const MarketPrices = () => {
                     transition: "background 0.3s ease",
                     textDecoration: "none",
                     "&:hover": { background: alpha(ACM_COLORS.orange, 0.05) },
-                    "&:hover .row-name": { color: ACM_COLORS.orange },
+                    "&:hover .row-name": {
+                      background:
+                        "linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    },
                   }}
                 >
                   {/* Name + ticker */}
@@ -1035,7 +1041,8 @@ const MarketPrices = () => {
                         fontWeight: 600,
                         fontSize: { xs: "0.85rem", md: "0.9rem" },
                         color: "#111827",
-                        transition: "color 0.2s",
+                        WebkitTextFillColor: "#111827",
+                        background: "none",
                         whiteSpace: "nowrap",
                         overflow: "hidden",
                         textOverflow: "ellipsis",

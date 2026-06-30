@@ -15,6 +15,7 @@ import {
 import { Link } from "react-router-dom";
 import { ACM_COLORS } from "../../../theme";
 import heroImage from "../../../assets/home_hero_15-26.webp";
+import CustomCaption from "../../../common/CustomCaption";
 
 const STATS = [
   {
@@ -113,52 +114,7 @@ const Hero = () => (
         {/* ── LEFT: Copy ── */}
         <Box>
           {/* Badge */}
-          <Box data-aos="fade-right">
-            <Box
-              sx={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 1,
-                px: 2,
-                py: 0.6,
-                mb: 3.5,
-                borderRadius: "100px",
-                background: alpha(ACM_COLORS.orange, 0.1),
-                border: `1px solid ${alpha(ACM_COLORS.orange, 0.3)}`,
-                backdropFilter: "blur(8px)",
-              }}
-            >
-              <Box
-                sx={{
-                  width: 7,
-                  height: 7,
-                  borderRadius: "50%",
-                  background: ACM_COLORS.orange,
-                  boxShadow: `0 0 10px ${ACM_COLORS.orange}`,
-                  animation: "heroPulse 2s ease infinite",
-                  "@keyframes heroPulse": {
-                    "0%,100%": {
-                      boxShadow: `0 0 0 0 ${alpha(ACM_COLORS.orange, 0.5)}`,
-                    },
-                    "50%": {
-                      boxShadow: `0 0 0 5px ${alpha(ACM_COLORS.orange, 0)}`,
-                    },
-                  },
-                }}
-              />
-              <Typography
-                sx={{
-                  fontSize: "0.72rem",
-                  fontWeight: 700,
-                  color: ACM_COLORS.orange,
-                  letterSpacing: 1.8,
-                  textTransform: "uppercase",
-                }}
-              >
-                Regulated Global Broker
-              </Typography>
-            </Box>
-          </Box>
+          <CustomCaption />
 
           {/* Headline */}
           <Box data-aos="fade-left" data-aos-delay="100">
@@ -219,8 +175,6 @@ const Hero = () => (
                 variant="contained"
                 endIcon={<ArrowForward sx={{ fontSize: "1rem !important" }} />}
                 sx={{
-                  background: ACM_COLORS.orange,
-                  borderRadius: "100px",
                   px: 4,
                   py: 1.6,
                   fontSize: "0.92rem",
@@ -228,11 +182,9 @@ const Hero = () => (
                   letterSpacing: 0.3,
                   boxShadow: `0 8px 28px ${alpha(ACM_COLORS.orange, 0.45)}`,
                   "&:hover": {
-                    background: "#c4633e",
                     boxShadow: `0 12px 36px ${alpha(ACM_COLORS.orange, 0.55)}`,
                     transform: "translateY(-2px)",
                   },
-                  transition: "all 0.22s ease",
                 }}
               >
                 Open Account
@@ -243,21 +195,10 @@ const Hero = () => (
                 variant="outlined"
                 endIcon={<ArrowForward sx={{ fontSize: "1rem !important" }} />}
                 sx={{
-                  borderColor: alpha("#000", 0.15),
-                  color: alpha("#000", 0.7),
-                  borderRadius: "100px",
                   px: 4,
                   py: 1.6,
                   fontSize: "0.92rem",
                   fontWeight: 500,
-                  backdropFilter: "blur(8px)",
-                  background: "transparent",
-                  "&:hover": {
-                    borderColor: ACM_COLORS.orange,
-                    color: ACM_COLORS.orange,
-                    background: alpha(ACM_COLORS.orange, 0.07),
-                  },
-                  transition: "all 0.22s ease",
                 }}
               >
                 Try a Demo
@@ -368,7 +309,7 @@ const Hero = () => (
               display: "block",
               position: "relative",
               zIndex: 1,
-              filter: "drop-shadow(0 40px 80px rgba(0,0,0,0.6))",
+              // filter: "drop-shadow(0 40px 80px rgba(0,0,0,0.6))",
             }}
           />
 
@@ -390,7 +331,7 @@ const Hero = () => (
               background: alpha(ACM_COLORS.cardBg, 0.9),
               border: `1px solid ${alpha("#000", 0.1)}`,
               backdropFilter: "blur(16px)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+              // boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
             }}
           >
             <Box

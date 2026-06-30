@@ -324,18 +324,11 @@ const Header = () => {
                 to="#"
                 size="small"
                 sx={{
-                  borderColor: ACM_COLORS.orange,
-                  color: ACM_COLORS.orange,
-                  borderRadius: "100px",
                   px: 2.5,
                   py: 0.9,
                   fontSize: "0.8rem",
                   fontWeight: 600,
                   letterSpacing: 0.5,
-                  "&:hover": {
-                    borderColor: ACM_COLORS.orange,
-                    background: alpha(ACM_COLORS.orange, 0.1),
-                  },
                 }}
               >
                 LOGIN
@@ -346,8 +339,6 @@ const Header = () => {
                 to="#"
                 size="small"
                 sx={{
-                  background: ACM_COLORS.orange,
-                  borderRadius: "100px",
                   px: 2.5,
                   py: 0.9,
                   fontSize: "0.8rem",
@@ -355,11 +346,9 @@ const Header = () => {
                   letterSpacing: 0.5,
                   boxShadow: `0 4px 16px ${alpha(ACM_COLORS.orange, 0.35)}`,
                   "&:hover": {
-                    background: "#c4633e",
                     boxShadow: `0 6px 20px ${alpha(ACM_COLORS.orange, 0.45)}`,
                     transform: "translateY(-1px)",
                   },
-                  transition: "all 0.2s",
                 }}
               >
                 OPEN ACCOUNT
@@ -554,9 +543,6 @@ const Header = () => {
             fullWidth
             onClick={() => setDrawerOpen(false)}
             sx={{
-              borderColor: ACM_COLORS.orange,
-              color: ACM_COLORS.orange,
-              borderRadius: "100px",
               py: 1.1,
               fontWeight: 600,
               fontSize: "0.85rem",
@@ -571,13 +557,10 @@ const Header = () => {
             fullWidth
             onClick={() => setDrawerOpen(false)}
             sx={{
-              background: ACM_COLORS.orange,
-              borderRadius: "100px",
               py: 1.1,
               fontWeight: 600,
               fontSize: "0.85rem",
               boxShadow: `0 4px 14px ${alpha(ACM_COLORS.orange, 0.35)}`,
-              "&:hover": { background: "#c4633e" },
             }}
           >
             OPEN ACCOUNT
