@@ -1,0 +1,9 @@
+﻿{
+  "name": "Anjali Capital Market",
+  "short_name": "AnjaliCM",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1565C0",
+  "background_color": "#ffffff",
+  "icons": []
+}
