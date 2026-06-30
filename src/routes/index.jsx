@@ -3,10 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import NotFound from "./NotFound";
 import RouteErrorFallback from "./RouteErrorFallback";
-import Homepage from "../components/homepage";
+import SuspenseLoader from '../common/SuspenseLoader';
+// import Homepage from "../components/homepage";
 
 // Lazy-loaded pages — none of these land in the initial bundle
-// const Homepage = lazy(() => import("../components/homepage"));
+const Homepage = lazy(() => import("../components/homepage"));
 
 const RouteIndex = () => (
   <Routes>
@@ -15,7 +16,7 @@ const RouteIndex = () => (
       <Route
         index
         element={
-          <Suspense fallback={null}>
+          <Suspense fallback={<SuspenseLoader />}>
             <Homepage />
           </Suspense>
         }

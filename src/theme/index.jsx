@@ -158,7 +158,7 @@ const theme = createTheme({
           '&:active': { transform: 'translateY(0)' },
         },
         containedPrimary: {
-          background: BRAND_GRADIENT,
+          background: `${BRAND_GRADIENT} padding-box, ${BRAND_GRADIENT} border-box`,
           color: '#fff',
           boxShadow: '0 4px 18px rgba(219,113,70,0.35)',
           '&:hover': {
@@ -168,7 +168,7 @@ const theme = createTheme({
           },
         },
         containedSecondary: {
-          background: 'linear-gradient(135deg, #4a3860 0%, #7950bf 100%)',
+          background: 'linear-gradient(135deg, #4a3860 0%, #7950bf 100%) padding-box, linear-gradient(135deg, #4a3860 0%, #7950bf 100%) border-box',
           color: '#fff',
           boxShadow: '0 4px 18px rgba(121,80,191,0.30)',
           '&:hover': {
@@ -181,7 +181,7 @@ const theme = createTheme({
           background: `linear-gradient(#ffffff, #ffffff) padding-box, ${BRAND_GRADIENT} border-box`,
           color: '#db7146',
           '&:hover': {
-            background: BRAND_GRADIENT,
+            background: `${BRAND_GRADIENT} padding-box, ${BRAND_GRADIENT} border-box`,
             color: '#fff',
             boxShadow: '0 4px 18px rgba(219,113,70,0.35)',
           },
@@ -190,7 +190,7 @@ const theme = createTheme({
           background: `linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #4a3860 0%, #7950bf 100%) border-box`,
           color: '#4a3860',
           '&:hover': {
-            background: 'linear-gradient(135deg, #4a3860 0%, #7950bf 100%)',
+            background: 'linear-gradient(135deg, #4a3860 0%, #7950bf 100%) padding-box, linear-gradient(135deg, #4a3860 0%, #7950bf 100%) border-box',
             color: '#fff',
             boxShadow: '0 4px 18px rgba(121,80,191,0.30)',
           },
