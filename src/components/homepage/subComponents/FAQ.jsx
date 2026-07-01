@@ -93,15 +93,15 @@ const FAQItem = ({ item, index, isOpen, onToggle }) => (
       borderRadius: 2,
       border: "2px solid transparent",
       background: isOpen
-        ? `linear-gradient(135deg, #ffffff, #f8f9fa) padding-box, linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box`
+        ? `linear-gradient(135deg, #ffffff, #f8f9fa) padding-box, linear-gradient(135deg, #f2a077 0%, #db7146 55%, #a34a28 100%) border-box`
         : `linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(${alpha("#000", 0.07)}, ${alpha("#000", 0.07)}) border-box`,
       transition: "background 0.25s ease, box-shadow 0.25s ease",
       boxShadow: isOpen
-        ? `0 4px 24px ${alpha(ACM_COLORS.orange, 0.1)}, 0 2px 12px ${alpha("#c44d8e", 0.07)}`
+        ? `0 4px 24px ${alpha(ACM_COLORS.orange, 0.1)}, 0 2px 12px ${alpha("#a34a28", 0.07)}`
         : "none",
       "&:hover": {
         background: isOpen
-          ? `linear-gradient(135deg, #ffffff, #f8f9fa) padding-box, linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box`
+          ? `linear-gradient(135deg, #ffffff, #f8f9fa) padding-box, linear-gradient(135deg, #f2a077 0%, #db7146 55%, #a34a28 100%) border-box`
           : `linear-gradient(${alpha("#000", 0.02)}, ${alpha("#000", 0.02)}) padding-box, linear-gradient(${alpha("#000", 0.14)}, ${alpha("#000", 0.14)}) border-box`,
       },
     }}
@@ -142,11 +142,35 @@ const FAQItem = ({ item, index, isOpen, onToggle }) => (
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
+          position: "relative",
+          boxSizing: "border-box",
           background: isOpen
-            ? "linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%)"
-            : alpha("#000", 0.06),
-          border: `1px solid ${isOpen ? "transparent" : alpha("#000", 0.1)}`,
-          transition: "background 0.25s, border-color 0.25s",
+            ? "linear-gradient(135deg, #f2a077 0%, #db7146 55%, #a34a28 100%)"
+            : "#ffffff",
+          boxShadow: isOpen ? "none" : `inset 0 0 0 1px ${alpha("#000", 0.12)}`,
+          transition: "background 0.25s, box-shadow 0.25s",
+
+          // Horizontal bar (always present — the "-")
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            width: 12,
+            height: 2,
+            borderRadius: 1,
+            background: isOpen ? "#fff" : ACM_COLORS.textMuted,
+            transition: "background 0.2s, transform 0.25s ease",
+          },
+          // Vertical bar (rotates away when open, forming "+")
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            width: 12,
+            height: 2,
+            borderRadius: 1,
+            background: isOpen ? "#fff" : ACM_COLORS.textMuted,
+            transform: isOpen ? "rotate(0deg)" : "rotate(90deg)",
+            transition: "background 0.2s, transform 0.25s ease",
+          },
         }}
       >
         {isOpen ? (
@@ -178,7 +202,7 @@ const FAQItem = ({ item, index, isOpen, onToggle }) => (
             <Box
               sx={{
                 height: 1,
-                background: `linear-gradient(90deg, #db7146, #c44d8e 55%, #7950bf, transparent)`,
+                background: `linear-gradient(90deg, #f2a077, #db7146 55%, #a34a28, transparent)`,
                 mb: 2,
               }}
             />
@@ -343,15 +367,15 @@ const FAQ = () => {
                   overflow: "hidden",
                   border: "2px solid transparent",
                   background: isActive
-                    ? "linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box"
-                    : "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box",
+                    ? "linear-gradient(135deg, #f2a077 0%, #db7146 55%, #a34a28 100%) border-box"
+                    : "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #f2a077 0%, #db7146 55%, #a34a28 100%) border-box",
                   color: isActive ? "#fff" : ACM_COLORS.orange,
                   cursor: "pointer",
                   transition: "background 0.25s ease, color 0.25s ease",
                   "&:hover": {
                     background: isActive
-                      ? "linear-gradient(135deg, #e5845a 0%, #d0609a 55%, #8f64cf 100%) border-box"
-                      : "linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box",
+                      ? "linear-gradient(135deg, #f7b895 0%, #e5845a 55%, #b85a32 100%) border-box"
+                      : "linear-gradient(135deg, #f2a077 0%, #db7146 55%, #a34a28 100%) border-box",
                     color: "#fff",
                   },
                   "& .MuiChip-label": { px: 1.25 },

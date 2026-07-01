@@ -16,7 +16,7 @@ const RouteIndex = () => (
       <Route
         index
         element={
-          <Suspense fallback={<SuspenseLoader />}>
+          <Suspense fallback={null}>
             <Homepage />
           </Suspense>
         }

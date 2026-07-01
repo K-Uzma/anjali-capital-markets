@@ -141,15 +141,16 @@ const Newsletter = () => {
               label={p.label}
               size="small"
               sx={{
+                p: 1.25,
                 borderRadius: 5,
-                border: "1px solid transparent",
+                border: "2px solid transparent",
                 background:
-                  "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #db7146 0%, #c44d8e 55%, #7950bf 100%) border-box",
+                  "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #f2a077 0%, #db7146 55%, #a34a28 100%) border-box",
                 transition: "background 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
                 cursor: "default",
                 "&:hover": {
                   background:
-                    "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #7950bf 0%, #c44d8e 55%, #db7146 100%) border-box",
+                    "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #a34a28 0%, #db7146 55%, #f2a077 100%) border-box",
                 },
                 fontSize: "0.75rem",
                 fontWeight: 500,
